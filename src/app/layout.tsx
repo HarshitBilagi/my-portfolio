@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Orbitron } from "next/font/google";
 import "./globals.css";
-
-// Fetching the futuristic 'Orbitron' font from Google Fonts
-const orbitron = Orbitron({ 
-  subsets: ["latin"],
-  weight: ['400', '500', '700', '900'] 
-});
 
 export const metadata: Metadata = {
   title: "Harshit's Portfolio",
@@ -20,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={orbitron.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

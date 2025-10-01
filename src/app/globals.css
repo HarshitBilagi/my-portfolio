@@ -7,10 +7,18 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  font-family: Gabriola, serif;
+}
+
 body {
   background-color: #0A0A0A;
   color: white;
   font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 /* Glassmorphism Card Style */

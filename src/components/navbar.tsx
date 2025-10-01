@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 
 const navLinks = [
     { name: "Home", href: "#home" },
@@ -11,23 +11,6 @@ const navLinks = [
 ];
 
 const Navbar: React.FC = () => {
-    const [visible, setVisible] = useState(true);
-    const lastScrollY = useRef(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-            if (currentScrollY > lastScrollY.current) {
-                setVisible(false); // Scrolling down
-            } else {
-                setVisible(true); // Scrolling up
-            }
-            lastScrollY.current = currentScrollY;
-        };
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
     const [activeLink, setActiveLink] = useState(navLinks[0].name);
 
     useEffect(() => {
@@ -41,17 +24,6 @@ const Navbar: React.FC = () => {
         return () => window.removeEventListener("hashchange", handleHashChange);
     }, []);
 
-    // Reorder navLinks so activeLink is at the center
-    const getCenteredLinks = () => {
-        const activeIdx = navLinks.findIndex(link => link.name === activeLink);
-        if (activeIdx === -1) return navLinks;
-        const links = [...navLinks];
-        const centerIdx = Math.floor(links.length / 2);
-        const [active] = links.splice(activeIdx, 1);
-        links.splice(centerIdx, 0, active);
-        return links;
-    };
-
     return (
         <nav
             style={{
@@ -63,8 +35,8 @@ const Navbar: React.FC = () => {
                 backdropFilter: "blur(20px)",
                 boxShadow: "0 4px 24px rgba(255, 255, 255, 0.1)",
                 transition: "transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1)",
-                transform: visible ? "translateY(0)" : "translateY(-100%)",
-                opacity: visible ? 1 : 0,
+                transform: "translateY(0)",
+                opacity: 1,
             }}
         >
             <div
@@ -87,7 +59,7 @@ const Navbar: React.FC = () => {
                         padding: 0,
                     }}
                 >
-                    {getCenteredLinks().map((link) => (
+                    {navLinks.map((link) => (
                         <li key={link.name}>
                             <a
                                 href={link.href}
@@ -143,6 +115,7 @@ const Navbar: React.FC = () => {
                 }
             `}</style>
         </nav>
-    )};
+    );
+};
 
 export default Navbar;

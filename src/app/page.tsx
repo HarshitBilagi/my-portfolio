@@ -7,6 +7,7 @@ import HorizontalScrollProjects from "../components/Projects";
 import DecryptedText from "@/components/DecryptedText";
 import Particles from "@/components/Particles";
 import SplitText from "@/components/SplitText";
+import Plasma from "@/components/Plasma";
 
 export default function HomePage() {
   return (
@@ -38,7 +39,6 @@ export default function HomePage() {
             minHeight: "100vh",
           }}
         >
-
           <SplitText
             text="Hello, Harshit welcomes you!"
             tag="h1"
@@ -55,7 +55,7 @@ export default function HomePage() {
           />
           <br />
           <div style={{ marginTop: "4rem" }}>
-          {/* <DecryptedText
+            {/* <DecryptedText
             text="It's me! A masterpiece in the making."
             speed={100}
             maxIterations={10}
@@ -96,7 +96,14 @@ export default function HomePage() {
           <DarkVeils />
         </div>
         {/* Foreground content */}
-        <div style={{ position: "relative", zIndex: 1 , width: "100%", height: "100%"}}>
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            width: "100%",
+            height: "100%",
+          }}
+        >
           <h1>Skills</h1>
           <div>
             <MagicBento
@@ -120,34 +127,33 @@ export default function HomePage() {
           position: "relative",
           padding: "2rem",
           textAlign: "center",
-          minHeight: "600px",
+          height: "90vh",
           overflow: "hidden",
         }}
       >
-        {/* <div
+        <div
           style={{
-        position: "absolute",
-        inset: 0,
-        zIndex: 0,
-        width: "100%",
-        height: "100%",
+            position: "absolute",
+            inset: 0,
+            zIndex: 0,
+            width: "100%",
+            height: "100vh",
           }}
         >
-        <DotGrid
-        dotSize={5}
-        gap={15}
-        baseColor="#271e37"
-        activeColor="#5227FF"
-        proximity={100}
-        shockRadius={250}
-        shockStrength={5}
-        resistance={750}
-        returnDuration={1.5}
+          <Plasma
+            color="#b19eef"
+            speed={0.6}
+            direction="forward"
+            scale={1.1}
+            opacity={0.8}
+            mouseInteractive={false}
           />
-        </div> */}
+        </div>
         <div style={{ position: "relative", zIndex: 1 }}>
           <h1>Projects</h1>
-          <HorizontalScrollProjects />
+          <div style={{ marginTop: "-8rem" }}>
+            <HorizontalScrollProjects />
+          </div>
         </div>
       </section>
       <section
@@ -160,7 +166,6 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
-        {/* Dark Veils as background */}
         <div
           style={{
             position: "absolute",
@@ -172,7 +177,7 @@ export default function HomePage() {
           }}
         >
           <Particles
-            particleColors={['#6b0bf2ff']}
+            particleColors={["#6b0bf2ff"]}
             particleCount={1000}
             particleSpread={10}
             speed={0.1}
@@ -183,9 +188,8 @@ export default function HomePage() {
           />
         </div>
         {/* Foreground content */}
-        <div style={{ position: "relative", zIndex: 1}}>
-          <h1>Experience</h1>
-
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <h1>I'm not a fresher btw ⮷</h1>
         </div>
       </section>
     </main>

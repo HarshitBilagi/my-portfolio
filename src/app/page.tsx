@@ -8,6 +8,7 @@ import DecryptedText from "@/components/DecryptedText";
 import Particles from "@/components/Particles";
 import SplitText from "@/components/SplitText";
 import Plasma from "@/components/Plasma";
+import ExperienceSection from "@/components/Experience";
 
 export default function HomePage() {
   return (
@@ -15,7 +16,7 @@ export default function HomePage() {
       <Navbar />
       <section
         id="home"
-        style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}
+        style={{ position: "relative", height: "100vh", overflow: "hidden" }}
       >
         <div
           style={{
@@ -77,7 +78,7 @@ export default function HomePage() {
           position: "relative",
           padding: "2rem",
           textAlign: "center",
-          minHeight: "600px",
+          height: "100vh",
           overflow: "hidden",
         }}
       >
@@ -127,7 +128,7 @@ export default function HomePage() {
           position: "relative",
           padding: "2rem",
           textAlign: "center",
-          height: "90vh",
+          height: "100vh",
           overflow: "hidden",
         }}
       >
@@ -162,7 +163,7 @@ export default function HomePage() {
           position: "relative",
           padding: "2rem",
           textAlign: "center",
-          height: "90vh",
+          height: "100vh",
           overflow: "hidden",
         }}
       >
@@ -173,7 +174,6 @@ export default function HomePage() {
             zIndex: 0,
             width: "100%",
             height: "100%",
-            // pointerEvents: "none",
           }}
         >
           <Particles
@@ -182,14 +182,17 @@ export default function HomePage() {
             particleSpread={10}
             speed={0.1}
             particleBaseSize={100}
-            moveParticlesOnHover={true}
+            moveParticlesOnHover={false}
             alphaParticles={true}
             disableRotation={false}
           />
         </div>
         {/* Foreground content */}
         <div style={{ position: "relative", zIndex: 1 }}>
-          <h1>I'm not a fresher btw ⮷</h1>
+          <h1>Experience</h1>
+          <div style={{ marginTop: "-5rem" }}>
+            <ExperienceSection />
+          </div>
         </div>
       </section>
     </main>

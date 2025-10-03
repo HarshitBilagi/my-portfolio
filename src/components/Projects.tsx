@@ -4,67 +4,72 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
-// --- Data (outside for performance) ---
 const projects = [
   {
     title: "LeetCode Revision Agent",
     description:
       "An agent that helps you revise solved LeetCode problems by sending you N number of solved problems with link everyday through mail.",
     imageUrl:
-      "https://placehold.co/1200x800/0A0A0A/00DFD8?text=Project+Alpha",
+      "/projects/p1.jpeg",
     techStack: ["Python"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/LeetCode-Revision-Agent",
+    live: false,
   },
   {
     title: "BlogIt",
     description:
-      "A bloggin platform where users can create, edit, and share blog posts. A Full-Stack application with user authentication, authorization and responsive design.",
+      "A blogging platform where users can create, edit, and share blog posts. A Full-Stack application with user authentication, authorization and responsive design.",
     imageUrl:
-      "https://placehold.co/1200x800/0A0A0A/FF0080?text=Project+Beta",
+      "/projects/p2.jpg",
     techStack: ["Next.Js", "REST API", "Node.js", "Tailwind CSS", "MongoDB"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/blog-it",
+    live: true,
   },
   {
     title: "Portfolio Website",
     description:
-    "A modern, responsive portfolio website built with Next.js and Tailwind CSS to showcase projects, skills, and experience.",
+      "A modern, responsive portfolio website built with Next.js and Tailwind CSS to showcase projects, skills, and experience.",
     imageUrl:
-    "https://placehold.co/1200x800/0A0A0A/8A2BE2?text=Project+Delta",
+      "/projects/p3.png",
     techStack: ["Next.Js", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/my-portfolio",
+    live: true,
   },
   {
     title: "Online FIR System",
     description:
-    "This is a user side web application where a user can file a First Information Report (FIR) online, without the need of visiting police station physically.",
+      "This is a user side web application where a user can file a First Information Report (FIR) online, without the need of visiting police station physically.",
     imageUrl:
-    "https://placehold.co/1200x800/0A0A0A/8A2BE2?text=Project+Delta",
+      "/projects/p4.png",
     techStack: ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/Online-FIR-System.git",
+    live: false,
   },
   {
     title: "Customer Survey: A Kiosk Application",
     description:
       "A responsive customer survey form built with React that allows users to answer questions, stores results in Database, and uses 'useNavigate' for smooth redirection after submission.",
     imageUrl:
-      "https://placehold.co/1200x800/0A0A0A/007CF0?text=Project+Gamma",
+      "/projects/p5.png",
     techStack: ["HTML5", "CSS3", "JavaScript"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/Customer_Survey",
+    live: true,
   },
   {
     title: "To-Do List",
     description:
       "An efficient To-Do List application with full CRUD capabilities, allowing you to easily Create, Read, Update, and Delete tasks. Stay organized and manage your tasks seamlessly with this user-friendly task management system.",
     imageUrl:
-      "https://placehold.co/1200x800/0A0A0A/007CF0?text=Project+Gamma",
+      "/projects/p6.png",
     techStack: ["HTML5", "CSS3", "JavaScript"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/To-Do-List",
+    live: true,
   },
 ];
 
@@ -202,7 +207,6 @@ const HorizontalScrollProjects: React.FC = () => {
   );
 };
 
-// Card
 const ProjectCard = ({
   project,
   isActive,
@@ -212,7 +216,7 @@ const ProjectCard = ({
 }) => {
   return (
     <div
-      className={`group relative h-full w-full overflow-hidden rounded-2xl glass-card shadow-2xl transition-all duration-300 ${
+      className={`group relative h-full w-full overflow-hidden rounded-2xl shadow-2xl glass-card transition-all duration-300 ${
         !isActive && "brightness-75"
       }`}
     >
@@ -230,7 +234,7 @@ const ProjectCard = ({
           {project.title}
         </h3>
         <p className="text-gray-300 mb-4 max-w-2xl">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-2 mb-6 justify-center">
           {project.techStack.map((tech: string) => (
             <span
               key={tech}
@@ -240,14 +244,15 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center justify-center space-x-8">
           <a
+            style={{ display: project.live ? "inline-flex" : "none" }}
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-bold text-white transition-all duration-300 
-                       rounded-lg bg-gradient-to-r from-[#00DFD8] to-[#007CF0] 
-                       px-5 py-2.5 text-sm hover:scale-105 active:scale-95 shadow-md"
+                      rounded-lg bg-gradient-to-r from-[#00DFD8] to-[#007CF0] 
+                      px-5 py-2.5 text-sm hover:scale-105 active:scale-95 shadow-md"
           >
             View Live <ArrowRight size={16} />
           </a>

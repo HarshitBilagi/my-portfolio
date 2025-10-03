@@ -1,10 +1,7 @@
-import DarkVeils from "../components/DarkVeil";
-import MagicBento from "../components/MagicBento";
-import DotGrid from "../components/DotGrid";
-import Threads from "../components/Threads";
+import DarkVeils from "@/components/DarkVeil";
+import MagicBento from "@/components/MagicBento";
 import Navbar from "@/components/navbar";
-import HorizontalScrollProjects from "../components/Projects";
-import DecryptedText from "@/components/DecryptedText";
+import HorizontalScrollProjects from "@/components/Projects";
 import Particles from "@/components/Particles";
 import SplitText from "@/components/SplitText";
 import Plasma from "@/components/Plasma";
@@ -54,21 +51,6 @@ export default function HomePage() {
             rootMargin="-100px"
             textAlign="center"
           />
-          <br />
-          <div style={{ marginTop: "4rem" }}>
-            {/* <DecryptedText
-            text="It's me! A masterpiece in the making."
-            speed={100}
-            maxIterations={10}
-            characters="ABCD#$%/{}</>1234!?"
-            className="revealed"
-            revealDirection="start"
-            sequential={true}
-            parentClassName="all-letters"
-            animateOn="view"
-            encryptedClassName="encrypted"
-          /> */}
-          </div>
         </div>
       </section>
 
@@ -82,7 +64,6 @@ export default function HomePage() {
           overflow: "hidden",
         }}
       >
-        {/* Dark Veils as background */}
         <div
           style={{
             position: "absolute",
@@ -96,7 +77,6 @@ export default function HomePage() {
         >
           <DarkVeils />
         </div>
-        {/* Foreground content */}
         <div
           style={{
             position: "relative",
@@ -178,16 +158,15 @@ export default function HomePage() {
         >
           <Particles
             particleColors={["#6b0bf2ff"]}
-            particleCount={1000}
+            particleCount={500}
             particleSpread={10}
-            speed={0.1}
+            speed={0.05}
             particleBaseSize={100}
             moveParticlesOnHover={false}
-            alphaParticles={true}
+            alphaParticles={false}
             disableRotation={false}
           />
         </div>
-        {/* Foreground content */}
         <div style={{ position: "relative", zIndex: 1 }}>
           <h1>Experience</h1>
           <div style={{ marginTop: "-5rem" }}>

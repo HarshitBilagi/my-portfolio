@@ -11,6 +11,8 @@ const experienceData = [
         description:
             "Led the development of scalable React applications, contributed to a shared component library, and gained hands-on experience in a fast-paced agile environment.",
         logo: "/logos/logo-code_inbound_llp.png",
+        technologies: ["React", "TypeScript", "CSS", "Tailwind CSS", "Swagger UI", "Git", "GitHub"]
+            
     },
     {
         role: "Intern - Programmer Analyst Trainee",
@@ -19,6 +21,7 @@ const experienceData = [
         description:
             "Built and tested full-stack features for enterprise-level client projects, focusing on performance optimization and collaborating with cross-functional teams.",
         logo: "/logos/logo-cts.png",
+        technologies: ["SQL", "PL/SQL", "CSS", "Oracle APEX", "Oracle VBCS", "JavaScript", "REST APIs"]
     },
     {
         role: "Fulltime - Programmer Analyst Trainee",
@@ -27,6 +30,7 @@ const experienceData = [
         description:
             "Built and tested full-stack features for enterprise-level client projects, focusing on performance optimization and collaborating with cross-functional teams.",
         logo: "/logos/logo-cts.png",
+        technologies: ["SQL", "PL/SQL", "CSS", "Oracle APEX"]
     },
 ];
 
@@ -199,6 +203,19 @@ useEffect(() => {
                                 <p className="text-gray-300 leading-relaxed">
                                     {exp.description}
                                 </p>
+                                <div className="mt-8">
+                                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Tech Stack</h4>
+                                    <ul className="flex flex-wrap gap-5">
+                                        {exp.technologies.map((tech) => (
+                                            <li
+                                                key={tech}
+                                                className="px-8 py-2 bg-gradient-to-r from-cyan-700 via-cyan-500 to-cyan-400 text-white text-sm font-semibold shadow-md border border-cyan-300 hover:scale-105 transition-transform duration-200"
+                                            >
+                                                {tech}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
                             </motion.div>
                         );
                     })}

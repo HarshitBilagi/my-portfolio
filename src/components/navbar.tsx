@@ -7,6 +7,7 @@ const navLinks = [
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
+    { name: "Let's Connect!", href: "#contact" },
 ];
 
 const Navbar: React.FC = () => {

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import styles from './experience.module.css'
 
 const experienceData = [
     {
@@ -137,7 +138,7 @@ useEffect(() => {
                     />
                     <div className="flex flex-col gap-8 relative z-10">
                         {experienceData.map((exp, i) => (
-                            <div key={exp.role + exp.company} className="flex items-center gap-4">
+                            <div key={exp.role + exp.company} className="flex items-center py-[15] gap-4">
                                 <motion.div
                                     animate={{
                                         scale: activeIndex === i ? 1.5 : 1,
@@ -168,7 +169,7 @@ useEffect(() => {
                 </div>
 
                 {/* --- Cards (Right) --- */}
-                <div className="w-3/4 relative h-[500px] flex items-start justify-center">
+                <div className={styles.card_container}>
                     {experienceData.map((exp, i) => {
                         const offset = i - activeIndex;
                         if (Math.abs(offset) > 3) return null;
@@ -183,7 +184,7 @@ useEffect(() => {
                                     zIndex: experienceData.length - Math.abs(offset),
                                 }}
                                 transition={{ type: "spring", stiffness: 200, damping: 25 }}
-                                className="absolute top-0 w-full max-w-[650px] h-[420px] rounded-2xl glass-card shadow-2xl p-8 flex flex-col justify-start"
+                                className={styles.cards}
                                 style={{ pointerEvents: offset === 0 ? "auto" : "none" }}
                             >
                                 <div className="flex items-center gap-4 mb-4">
@@ -205,11 +206,11 @@ useEffect(() => {
                                 </p>
                                 <div className="mt-8">
                                     <h4 className="text-lg font-semibold text-cyan-400 mb-3">Tech Stack</h4>
-                                    <ul className="flex flex-wrap gap-5">
+                                    <ul className="flex flex-wrap gap-6">
                                         {exp.technologies.map((tech) => (
                                             <li
                                                 key={tech}
-                                                className="px-8 py-2 bg-gradient-to-r from-cyan-700 via-cyan-500 to-cyan-400 text-white text-sm font-semibold shadow-md border border-cyan-300 hover:scale-105 transition-transform duration-200"
+                                                className="px-[8] mx-[4] my-[4] py-[2] list-none bg-gradient-to-r from-cyan-700 via-cyan-500 to-cyan-400 text-white text-sm font-semibold shadow-md border border-cyan-300 hover:scale-105 transition-transform duration-200"
                                             >
                                                 {tech}
                                             </li>

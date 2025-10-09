@@ -5,7 +5,8 @@ import HorizontalScrollProjects from "@/components/Projects";
 import Particles from "@/components/Particles";
 import SplitText from "@/components/SplitText";
 import Plasma from "@/components/Plasma";
-import ExperienceSection from "@/components/Experience";
+import ExperienceSection from "@/components/Experience/Experience";
+import ContactSection from '@/components/Connect/Connect';
 
 export default function HomePage() {
   return (
@@ -173,6 +174,9 @@ export default function HomePage() {
             <ExperienceSection />
           </div>
         </div>
+      </section>
+      <section id="contact" style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+        <ContactSection />
       </section>
     </main>
   );

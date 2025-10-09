@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Github, ArrowRight, ChevronLeft, ChevronRight, RadioTower } from "lucide-react";
 
 const projects = [
   {
@@ -148,21 +148,20 @@ const HorizontalScrollProjects: React.FC = () => {
     <section
       ref={sectionRef}
       id="projects"
-      className="relative h-screen bg-transparent flex flex-col justify-center items-center overflow-hidden"
+      className="relative h-screen flex flex-col justify-center items-center overflow-hidden"
     >
       <div className="w-full max-w-[1100px] flex flex-col items-center justify-center px-6">
-        {/* Cards */}
         <div className="relative w-full h-[520px] flex items-center justify-center">
           {projects.map((project, i) => {
             const offset = i - activeIndex;
-            if (Math.abs(offset) > 3) return null; // limit renders
+            if (Math.abs(offset) > 3) return null;
 
             return (
               <motion.div
                 key={project.title}
                 animate={{
-                  x: offset * 60, // horizontal offset for stacking
-                  y: offset * 20, // vertical offset for book-page look
+                  x: offset * 60,
+                  y: offset * 20, 
                   scale: 1 - Math.abs(offset) * 0.08,
                   opacity: 1 - Math.abs(offset) * 0.25,
                   zIndex: projects.length - Math.abs(offset),
@@ -182,8 +181,8 @@ const HorizontalScrollProjects: React.FC = () => {
           <button
             onClick={() => setActiveIndex((p) => Math.max(p - 1, 0))}
             disabled={activeIndex === 0}
-            className="disabled:opacity-30 disabled:cursor-not-allowed rounded-full p-3 
-                       bg-gradient-to-r from-[#00DFD8] to-[#007CF0]
+            className="disabled:opacity-30 disabled:cursor-not-allowed rounded-[50] w-[50px] p-3 
+                       bg-gradient-to-r from-[#00DFD8] to-[#007CF0] m-[3]
                        text-white shadow-lg shadow-cyan-500/30
                        transition-transform hover:scale-110 active:scale-95"
           >
@@ -194,8 +193,8 @@ const HorizontalScrollProjects: React.FC = () => {
               setActiveIndex((p) => Math.min(p + 1, projects.length - 1))
             }
             disabled={activeIndex === projects.length - 1}
-            className="disabled:opacity-30 disabled:cursor-not-allowed rounded-full p-3 
-                       bg-gradient-to-r from-[#FF0080] to-[#7928CA]
+            className="disabled:opacity-30 disabled:cursor-not-allowed rounded-full rounded-[50] w-[50px] p-3 
+                       bg-gradient-to-r from-[#FF0080] to-[#7928CA] m-[3]
                        text-white shadow-lg shadow-pink-500/30
                        transition-transform hover:scale-110 active:scale-95"
           >
@@ -238,7 +237,7 @@ const ProjectCard = ({
           {project.techStack.map((tech: string) => (
             <span
               key={tech}
-              className="bg-gray-800/70 backdrop-blur-sm text-[#00DFD8] text-xs font-semibold px-3 py-1 rounded-full"
+              className="bg-gray-800/70 backdrop-blur-sm text-[#00DFD8] text-xs font-semibold px-[5] my-[3] rounded-full"
             >
               {tech}
             </span>
@@ -250,17 +249,17 @@ const ProjectCard = ({
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-bold text-white transition-all duration-300 
-                      rounded-lg bg-gradient-to-r from-[#00DFD8] to-[#007CF0] 
+            className="inline-flex m-[5] items-center gap-2 font-bold text-white transition-all duration-300 
+                      rounded-lg 
                       px-5 py-2.5 text-sm hover:scale-105 active:scale-95 shadow-md"
           >
-            View Live <ArrowRight size={16} />
+          <RadioTower size={24} />
           </a>
           <a
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white transition-colors duration-300 hover:scale-110"
+            className="text-gray-300 m-[5] hover:text-white transition-colors duration-300 hover:scale-110"
           >
             <Github size={24} />
           </a>

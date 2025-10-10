@@ -76,6 +76,6 @@
     cursor: not-allowed; 
   }
 
-  .image_border {
+  /* .image_border {
     filter: drop-shadow(2px 2px 1px rgb(81, 0, 255)) drop-shadow(2px 2px 1px rgb(25, 0, 255));
-  }
+  } */

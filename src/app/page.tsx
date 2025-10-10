@@ -26,7 +26,7 @@ export default function HomePage() {
             pointerEvents: "none",
           }}
         >
-          <DarkVeils />
+          {/* <DarkVeils /> */}
         </div>
         <div
           style={{
@@ -76,7 +76,7 @@ export default function HomePage() {
             transform: "rotate(180deg)",
           }}
         >
-          <DarkVeils />
+          {/* <DarkVeils /> */}
         </div>
         <div
           style={{
@@ -122,14 +122,14 @@ export default function HomePage() {
             height: "100vh",
           }}
         >
-          <Plasma
+          {/* <Plasma
             color="#b19eef"
             speed={0.6}
             direction="forward"
             scale={1.1}
             opacity={0.8}
             mouseInteractive={false}
-          />
+          /> */}
         </div>
         <div style={{ position: "relative", zIndex: 1 }}>
           <h1>Projects</h1>
@@ -157,7 +157,7 @@ export default function HomePage() {
             height: "100%",
           }}
         >
-          <Particles
+          {/* <Particles
             particleColors={["#6b0bf2ff"]}
             particleCount={500}
             particleSpread={10}
@@ -166,7 +166,7 @@ export default function HomePage() {
             moveParticlesOnHover={false}
             alphaParticles={false}
             disableRotation={false}
-          />
+          /> */}
         </div>
         <div style={{ position: "relative", zIndex: 1 }}>
           <h1>Experience</h1>

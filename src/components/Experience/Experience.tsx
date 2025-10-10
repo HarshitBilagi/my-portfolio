@@ -205,7 +205,7 @@ useEffect(() => {
                                     {exp.description}
                                 </p>
                                 <div className="mt-8">
-                                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Tech Stack</h4>
+                                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Skills</h4>
                                     <ul className="flex flex-wrap gap-6">
                                         {exp.technologies.map((tech) => (
                                             <li

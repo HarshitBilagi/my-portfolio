@@ -110,7 +110,7 @@ useEffect(() => {
   };
 
   window.addEventListener("wheel", onWheel, { passive: false });
-  return () => window.removeEventListener("wheel", onWheel as any);
+  return () => window.removeEventListener("wheel", onWheel);
 }, [locked, activeIndex]);
 
 

@@ -20,6 +20,11 @@ const eslintConfig = [
       "next-env.d.ts",
     ],
   },
+  {
+    "rules": {
+      "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }]
+    }
+  }
 ];
 
 export default eslintConfig;

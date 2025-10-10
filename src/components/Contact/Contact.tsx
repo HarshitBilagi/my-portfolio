@@ -148,7 +148,7 @@ const ContactSection = () => {
                         style={{ transformStyle: 'preserve-3d' }}
                     >
                         <div className="absolute inset-0 w-full h-full rounded-2xl glass-card p-8 flex flex-col justify-center" style={{ backfaceVisibility: 'hidden' }}>
-						<h2 className="font-futurism text-3xl font-bold text-white mb-2 text-center">Let's Connect!</h2>
+						<h2 className="font-futurism text-3xl font-bold text-white mb-2 text-center">Let&apos;s Connect!</h2>
 						<p className="text-gray-400 text-center mb-6">Have a project in mind or just want to say hi? <br /> Drop me a line.</p>
 						<form className="space-y-3 flex flex-col items-center" onSubmit={handleSubmit} noValidate>
 							<div className="w-[90%]">

@@ -140,7 +140,7 @@ const HorizontalScrollProjects: React.FC = () => {
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });
-    return () => window.removeEventListener("wheel", onWheel as any);
+    return () => window.removeEventListener("wheel", onWheel);
   }, [locked, activeIndex]);
 
   return (
@@ -205,11 +205,21 @@ const HorizontalScrollProjects: React.FC = () => {
   );
 };
 
+interface Project {
+  title: string;
+  description: string;
+  imageUrl: string;
+  techStack: string[];
+  liveUrl: string;
+  githubUrl: string;
+  live: boolean;
+}
+
 const ProjectCard = ({
   project,
   isActive,
 }: {
-  project: any;
+  project: Project;
   isActive: boolean;
 }) => {
   return (

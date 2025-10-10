@@ -42,7 +42,7 @@ const GridHero = () => {
 
                 <motion.div variants={itemVariants} className="col-span-4 md:col-span-2 p-6 rounded-2xl glass-card flex flex-col justify-center items-center">
                     <p className="text-gray-300 text-center">
-                        It's 11:39 AM on a Friday here in Bengaluru, India. <br/> Currently focused on building the future of the web.
+                        It&apos;s 11:39 AM on a Friday here in Bengaluru, India. <br/> Currently focused on building the future of the web.
                     </p>
                 </motion.div>
                 

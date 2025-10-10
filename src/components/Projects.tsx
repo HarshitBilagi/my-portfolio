@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Github, ArrowRight, ChevronLeft, ChevronRight, RadioTower } from "lucide-react";
+import { Github, ChevronLeft, ChevronRight, RadioTower } from "lucide-react";
 
 const projects = [
   {
@@ -129,7 +129,6 @@ const HorizontalScrollProjects: React.FC = () => {
           e.preventDefault();
           setActiveIndex((prev) => prev - 1);
         } else {
-          // unlock if already at first card *and* scroll again
           setLocked(false);
         }
       }
@@ -137,7 +136,7 @@ const HorizontalScrollProjects: React.FC = () => {
       isThrottledRef.current = true;
       setTimeout(() => {
         isThrottledRef.current = false;
-      }, 1000); // matches animation duration
+      }, 1000); 
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });

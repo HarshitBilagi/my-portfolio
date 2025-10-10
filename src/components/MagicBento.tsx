@@ -15,7 +15,6 @@ export interface BentoCardProps {
   label?: string;
   textAutoHide?: boolean;
   disableAnimations?: boolean;
-  // New property for skills
   skills?: string[];
 }
 

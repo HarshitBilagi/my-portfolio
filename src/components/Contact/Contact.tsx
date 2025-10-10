@@ -2,15 +2,16 @@
 
 import React, { useCallback, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Code, Gamepad2, Music, Plane } from 'lucide-react';
+import { Send } from 'lucide-react';
 import styles from './contact.module.css'
+import Image from 'next/image';
 
 const interests = [
-    { id: 'code', icon: <img src="/connect page/zenitsu-anime.png" alt="anime" width={400} />, position: 'top-2/4 left-[5%]', delay: 0.1, rotation: -15, zIndex: 20 },
-    { id: 'gaming', icon: <img src="/connect page/minecraft.png" alt="minecraft" width={200} />, position: 'top-1/4 right-[12%]', delay: 0.3, rotation: 10, zIndex: 30 },
-    { id: 'music', icon: <img src="/connect page/ironman.png" alt="ironman" width={200} />, position: 'bottom-[55%] left-[20%]', delay: 0.5, rotation: 5, zIndex: 10 },
-    { id: 'travel', icon: <img src="/connect page/rb21.png" alt="F1 car" width={600} />, position: 'bottom-[-4%] right-[12%]', delay: 0.2, rotation: -5, zIndex: 0 },
-    { id: 'cards', icon: <img src="/connect page/cards.png" alt="cards" width={200} />, position: 'top-[8%] left-[8%]', delay: 0.2, rotation: -5, zIndex: 5 },
+    { id: 'anime', icon: <Image src="/connect page/zenitsu-anime.png" alt="anime" width={400} height={400} />, position: 'top-2/4 left-[5%]', delay: 0.1, rotation: -15, zIndex: 20 },
+    { id: 'minecraft', icon: <Image src="/connect page/minecraft.png" alt="minecraft" width={200} height={250} />, position: 'top-1/4 right-[12%]', delay: 0.3, rotation: 10, zIndex: 30 },
+    { id: 'ironman', icon: <Image src="/connect page/ironman.png" alt="ironman" width={200} height={200} />, position: 'bottom-[55%] left-[20%]', delay: 0.5, rotation: 5, zIndex: 10 },
+    { id: 'rb21 f1 car', icon: <Image src="/connect page/rb21.png" alt="F1 car" width={600} height={400} />, position: 'bottom-[-4%] right-[12%]', delay: 0.2, rotation: -5, zIndex: 0 },
+    { id: 'cards', icon: <Image src="/connect page/cards.png" alt="cards" width={200} height={200} />, position: 'top-[8%] left-[8%]', delay: 0.2, rotation: -5, zIndex: 5 },
 ];
 
 const ContactSection = () => {

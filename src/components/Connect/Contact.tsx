@@ -3,7 +3,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Code, Gamepad2, Music, Plane } from 'lucide-react';
-import styles from './connect.module.css'
+import styles from './contact.module.css'
 
 const interests = [
     { id: 'code', icon: <img src="/connect page/zenitsu-anime.png" alt="anime" width={400} />, position: 'top-2/4 left-[5%]', delay: 0.1, rotation: -15, zIndex: 20 },

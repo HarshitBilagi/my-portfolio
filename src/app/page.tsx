@@ -6,7 +6,7 @@ import Particles from "@/components/Particles";
 import SplitText from "@/components/SplitText";
 import Plasma from "@/components/Plasma";
 import ExperienceSection from "@/components/Experience/Experience";
-import ContactSection from '@/components/Connect/Connect';
+import ContactSection from '@/components/Connect/Contact';
 
 export default function HomePage() {
   return (

@@ -10,174 +10,125 @@ import ContactSection from '@/components/Contact/Contact';
 
 export default function HomePage() {
   return (
-    <main>
-      <Navbar />
-      <section
-        id="home"
-        style={{ position: "relative", height: "100vh", overflow: "hidden" }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-          }}
-        >
-          <DarkVeils />
-        </div>
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            minHeight: "100vh",
-          }}
-        >
-          <SplitText
-            text="Hello, Harshit welcomes you!"
-            tag="h1"
-            className="text-2xl font-bold text-center"
-            delay={60}
-            duration={0.6}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="center"
-          />
-        </div>
-      </section>
-
-      <section
-        id="skills"
+    <main style={{ position: "relative", minHeight: "100vh", overflow: "hidden" }}>
+      <div
         style={{
-          position: "relative",
-          padding: "2rem",
-          textAlign: "center",
+          position: "fixed",
+          inset: 0,
+          zIndex: 0,
+          width: "100vw",
           height: "100vh",
-          overflow: "hidden",
+          pointerEvents: "none",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-            transform: "rotate(180deg)",
-          }}
+        <DarkVeils />
+      </div>
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <Navbar />
+        <section
+          id="home"
+          style={{ position: "relative", height: "100vh", overflow: "hidden" }}
         >
-          <DarkVeils />
-        </div>
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          <h1>Skills</h1>
-          <div>
-            <MagicBento
-              textAutoHide={true}
-              enableStars={true}
-              enableSpotlight={true}
-              enableBorderGlow={true}
-              enableTilt={true}
-              enableMagnetism={true}
-              clickEffect={true}
-              spotlightRadius={300}
-              particleCount={12}
-              glowColor="132, 0, 255"
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              minHeight: "100vh",
+            }}
+          >
+            <SplitText
+              text="Harshit Bilagi"
+              tag="h1"
+              className="text-2xl font-bold text-center animated-gradient-to-r from-purple-400 via-pink-500 to-red-500"
+              delay={60}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
             />
           </div>
-        </div>
-      </section>
-      <section
-        id="projects"
-        style={{
-          position: "relative",
-          padding: "2rem",
-          textAlign: "center",
-          height: "100vh",
-          overflow: "hidden",
-        }}
-      >
-        <div
+        </section>
+
+        <section
+          id="skills"
           style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            width: "100%",
+            position: "relative",
+            padding: "2rem",
+            textAlign: "center",
             height: "100vh",
+            overflow: "hidden",
           }}
         >
-          <Plasma
-            color="#b19eef"
-            speed={0.6}
-            direction="forward"
-            scale={1.1}
-            opacity={0.8}
-            mouseInteractive={false}
-          />
-        </div>
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <h1>Projects</h1>
-          <div style={{ marginTop: "-8rem" }}>
-            <HorizontalScrollProjects />
+          <div
+            style={{
+              position: "relative",
+              zIndex: 1,
+              width: "100%",
+              height: "100%",
+            }}
+          >
+            <h1>Skills</h1>
+            <div style={{ position: "relative", marginTop: "4rem" }}>
+              <MagicBento
+                textAutoHide={true}
+                enableStars={true}
+                enableSpotlight={true}
+                enableBorderGlow={true}
+                enableTilt={true}
+                enableMagnetism={true}
+                clickEffect={true}
+                spotlightRadius={300}
+                particleCount={12}
+                glowColor="132, 0, 255"
+              />
+            </div>
           </div>
-        </div>
-      </section>
-      <section
-        id="experience"
-        style={{
-          position: "relative",
-          padding: "2rem",
-          textAlign: "center",
-          height: "100vh",
-          overflow: "hidden",
-        }}
-      >
-        <div
+        </section>
+        <section
+          id="projects"
           style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 0,
-            width: "100%",
-            height: "100%",
+            position: "relative",
+            padding: "2rem",
+            textAlign: "center",
+            height: "100vh",
+            overflow: "hidden",
           }}
         >
-          <Particles
-            particleColors={["#6b0bf2ff"]}
-            particleCount={500}
-            particleSpread={10}
-            speed={0.05}
-            particleBaseSize={100}
-            moveParticlesOnHover={false}
-            alphaParticles={false}
-            disableRotation={false}
-          />
-        </div>
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <h1>Experience</h1>
-          <div style={{ marginTop: "-5rem" }}>
-            <ExperienceSection />
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <h1>Projects</h1>
+            <div style={{ marginTop: "-6rem" }}>
+              <HorizontalScrollProjects />
+            </div>
           </div>
-        </div>
-      </section>
-      <section id="contact" style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
-        <ContactSection />
-      </section>
+        </section>
+        <section
+          id="experience"
+          style={{
+            position: "relative",
+            padding: "2rem",
+            textAlign: "center",
+            height: "100vh",
+            overflow: "hidden",
+          }}
+        >
+          <div style={{ position: "relative", zIndex: 1 }}>
+            <h1>Experience</h1>
+            <div style={{ marginTop: "-5rem" }}>
+              <ExperienceSection />
+            </div>
+          </div>
+        </section>
+        <section id="contact" style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+          <ContactSection />
+        </section>
+      </div>
     </main>
   );
 }

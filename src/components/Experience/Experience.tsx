@@ -121,16 +121,11 @@ useEffect(() => {
             className="relative h-screen bg-transparent flex flex-col justify-center items-center overflow-hidden"
         >
             <div className="text-center mb-12">
-                {/* <h2 className="text-4xl font-bold tracking-wider uppercase">
-                    <span className="animated-gradient-text">Experience</span>
-                </h2> */}
-                {/* <p className="text-gray-400 mt-2">My professional journey.</p> */}
+
             </div>
             <div className="w-full max-w-[1200px] flex">
-                {/* --- Animated Timeline (Left) --- */}
                 <div className="w-2/4 relative flex flex-col items-start justify-center pr-6">
                     <div className="absolute left-[14px] top-0 h-full w-[2px] bg-gray-700" />
-                    {/* Animated Progress Bar */}
                     <motion.div
                         className="absolute left-[14px] top-0 h-full w-[2px] bg-cyan-400 origin-top"
                         animate={{ scaleY: activeIndex / (experienceData.length - 1) }}
@@ -168,7 +163,6 @@ useEffect(() => {
                     </div>
                 </div>
 
-                {/* --- Cards (Right) --- */}
                 <div className={styles.card_container}>
                     {experienceData.map((exp, i) => {
                         const offset = i - activeIndex;
@@ -178,7 +172,7 @@ useEffect(() => {
                             <motion.div
                                 key={exp.role + exp.company}
                                 animate={{
-                                    y: offset * 40, // vertical stacking distance
+                                    y: offset * 30, 
                                     scale: 1 - Math.abs(offset) * 0.08,
                                     opacity: 1 - Math.abs(offset) * 0.3,
                                     zIndex: experienceData.length - Math.abs(offset),

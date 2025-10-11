@@ -7,15 +7,33 @@
 @tailwind components;
 @tailwind utilities;
 
-h1 {
-  font-family: Gabriola, serif;
-  font-size: 3rem;
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Futurism';
+  src: url('/fonts/Futurism.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 body {
   background-color: #0A0A0A;
   color: white;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Metropolis', Arial, sans-serif;
+}
+
+h1 {
+  font-family: 'Futurism', Arial, sans-serif;
+  font-size: 3rem;
+}
+
+p, li, a, button, input, textarea {
+  font-family: 'Metropolis', Arial, sans-serif;
 }
 
 * {

@@ -9,19 +9,20 @@
 }
 
 .cards {
-    position: absolute;      /* absolute */
-    top: 0;                  /* top-0 */
-    width: 100%;             /* w-full */
-    max-width: 650px;        /* max-w-[650px] */
-    height: 420px;           /* h-[420px] */
-    background-color: #15002c;
-    display: flex;           /* flex */
-    flex-direction: column;  /* flex-col */
-    justify-content: flex-start; /* justify-start */
+    position: absolute;    
+    top: 0;                
+    width: 100%;            
+    max-width: 650px;       
+    height: 420px;         
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px); 
+    display: flex;        
+    flex-direction: column; 
+    justify-content: flex-start;
     border: 5px solid #6e02ca;
-    border-radius: 1rem;     /* rounded-2xl (1rem is the default for rounded-2xl) */
-    padding: 2rem;           /* p-8 (Since 1 unit in Tailwind is typically 0.25rem, 8 units is 2rem) */
-    box-shadow: 0 25px 50px 7px rgba(45, 4, 248, 0.25); /* shadow-2xl (Approximation of Tailwind's shadow-2xl) */
+    border-radius: 1rem;    
+    padding: 2rem;           
+    box-shadow: 0 25px 50px 7px rgba(45, 4, 248, 0.25); 
 }
 
 .roles_list {

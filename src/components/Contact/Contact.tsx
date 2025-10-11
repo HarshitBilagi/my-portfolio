@@ -110,7 +110,7 @@ const ContactSection = () => {
     return (
         <section
             id="contact"
-            className="relative h-screen flex justify-center items-center overflow-hidden bg-[#0A0A0A] p-4"
+            className="relative h-screen flex justify-center items-center overflow-hidden p-4"
         >
             {/* Background Aurora */}
             <div className="absolute inset-0 z-0">

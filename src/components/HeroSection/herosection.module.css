@@ -1,0 +1,9 @@
+.dock_icons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 4px 9px 7px 9px;
+}

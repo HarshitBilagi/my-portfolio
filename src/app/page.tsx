@@ -1,12 +1,10 @@
 import DarkVeils from "@/components/DarkVeil";
-import MagicBento from "@/components/MagicBento";
+import MagicBento from "@/components/Skills";
 import Navbar from "@/components/navbar";
 import HorizontalScrollProjects from "@/components/Projects";
-import Particles from "@/components/Particles";
-import SplitText from "@/components/SplitText";
-import Plasma from "@/components/Plasma";
 import ExperienceSection from "@/components/Experience/Experience";
 import ContactSection from '@/components/Contact/Contact';
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 export default function HomePage() {
   return (
@@ -29,31 +27,7 @@ export default function HomePage() {
           id="home"
           style={{ position: "relative", height: "100vh", overflow: "hidden" }}
         >
-          <div
-            style={{
-              position: "relative",
-              zIndex: 1,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              minHeight: "100vh",
-            }}
-          >
-            <SplitText
-              text="Harshit Bilagi"
-              tag="h1"
-              className="text-2xl font-bold text-center animated-gradient-to-r from-purple-400 via-pink-500 to-red-500"
-              delay={60}
-              duration={0.6}
-              ease="power3.out"
-              splitType="chars"
-              from={{ opacity: 0, y: 40 }}
-              to={{ opacity: 1, y: 0 }}
-              threshold={0.1}
-              rootMargin="-100px"
-              textAlign="center"
-            />
-          </div>
+          <HeroSection />
         </section>
 
         <section
@@ -82,10 +56,10 @@ export default function HomePage() {
                 enableSpotlight={true}
                 enableBorderGlow={true}
                 enableTilt={true}
-                enableMagnetism={true}
+                enableMagnetism={false}
                 clickEffect={true}
-                spotlightRadius={300}
-                particleCount={12}
+                spotlightRadius={1000}
+                particleCount={200}
                 glowColor="132, 0, 255"
               />
             </div>

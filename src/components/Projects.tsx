@@ -34,7 +34,7 @@ const projects = [
     imageUrl:
       "/projects/p3.png",
     techStack: ["Next.Js", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP"],
-    liveUrl: "#",
+    liveUrl: "https://my-portfolio-git-main-sirius-projects-9e638854.vercel.app/",
     githubUrl: "https://github.com/HarshitBilagi/my-portfolio",
     live: true,
   },

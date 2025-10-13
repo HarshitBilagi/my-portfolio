@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import styles from './experience.module.css'
+import Image from "next/image";
 
 const experienceData = [
     {
@@ -182,10 +183,11 @@ useEffect(() => {
                                 style={{ pointerEvents: offset === 0 ? "auto" : "none" }}
                             >
                                 <div className="flex items-center gap-4 mb-4">
-                                    <img
+                                    <Image
                                         src={exp.logo}
                                         alt={`${exp.company} logo`}
                                         width={200}
+                                        height={100}
                                         className="object-contain rounded-lg bg-gray-900"
                                     />
                                     <div>

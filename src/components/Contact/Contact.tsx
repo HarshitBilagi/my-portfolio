@@ -3,15 +3,16 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
-import styles from './contact.module.css'
+import styles from '@/components/Contact/contact.module.css';
 import Image from 'next/image';
+// import TargetCursor from '@/components/ReactComponents/TargetCursor';
 
 const interests = [
-    { id: 'anime', icon: <Image src="/connect page/zenitsu-anime.png" alt="anime" width={400} height={400} />, position: 'top-2/4 left-[5%]', delay: 0.1, rotation: -15, zIndex: 20 },
-    { id: 'minecraft', icon: <Image src="/connect page/minecraft.png" alt="minecraft" width={200} height={250} />, position: 'top-1/4 right-[12%]', delay: 0.3, rotation: 10, zIndex: 30 },
-    { id: 'ironman', icon: <Image src="/connect page/ironman.png" alt="ironman" width={200} height={200} />, position: 'bottom-[55%] left-[20%]', delay: 0.5, rotation: 5, zIndex: 10 },
-    { id: 'rb21 f1 car', icon: <Image src="/connect page/rb21.png" alt="F1 car" width={600} height={400} />, position: 'bottom-[-4%] right-[12%]', delay: 0.2, rotation: -5, zIndex: 0 },
-    { id: 'cards', icon: <Image src="/connect page/cards.png" alt="cards" width={200} height={200} />, position: 'top-[8%] left-[8%]', delay: 0.2, rotation: -5, zIndex: 5 },
+    // { id: 'anime', icon: <Image src="/interests/zenitsu-anime.png" alt="anime" width={400} height={400} />, position: 'top-2/4 left-[5%]', delay: 0.1, rotation: -15, zIndex: 20 },
+    { id: 'minecraft', icon: <Image src="/interests/minecraft.png" alt="minecraft" width={500} height={500} />, position: 'top-[10%] right-[33%]', delay: 0.3, rotation: 10, zIndex: 0 },
+    // { id: 'ironman', icon: <Image src="/interests/ironman.png" alt="ironman" width={200} height={200} />, position: 'bottom-[55%] left-[20%]', delay: 0.5, rotation: 5, zIndex: 10 },
+    { id: 'rb21 f1 car', icon: <Image src="/interests/rb21.png" alt="F1 car" width={600} height={130} />, position: 'bottom-[0] left-[30%]', delay: 0.2, rotation: -5, zIndex: 40 },
+    // { id: 'cards', icon: <Image src="/interests/cards.png" alt="cards" width={200} height={200} />, position: 'top-[8%] left-[8%]', delay: 0.2, rotation: -5, zIndex: 5 },
 ];
 
 const ContactSection = () => {
@@ -21,6 +22,7 @@ const ContactSection = () => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [submitError, setSubmitError] = useState<string | null>(null);
 	const [submitSuccess, setSubmitSuccess] = useState(false);
+	// const [isHovered, setIsHovered] = useState(false);
 
 	const emailRegex = useMemo(() => /^(?:[a-zA-Z0-9_'^&\/+-])+(?:\.(?:[a-zA-Z0-9_'^&\/+-])+)*@(?:(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,})$/, []);
 
@@ -76,7 +78,6 @@ const ContactSection = () => {
 			setIsSubmitting(false);
 		}
 	}, [validate, name, email, message]);
-    // Parent container variants to orchestrate animations
     const sectionVariants = {
         hidden: {},
         visible: {
@@ -86,7 +87,6 @@ const ContactSection = () => {
         },
     };
 
-    // Animation for images popping up from the bottom
     const imageVariants = {
         hidden: { y: '100vh', opacity: 0 },
         visible: { 
@@ -96,7 +96,6 @@ const ContactSection = () => {
         },
     };
     
-    // Animation for the card flipping and popping up
     const cardVariants = {
         hidden: { y: 200, opacity: 0, rotateY: 180 },
         visible: {
@@ -111,8 +110,15 @@ const ContactSection = () => {
         <section
             id="contact"
             className="relative h-screen flex justify-center items-center overflow-hidden p-4"
+            // onMouseEnter={() => setIsHovered(true)}
+            // onMouseLeave={() => setIsHovered(false)}
         >
-            {/* Background Aurora */}
+            {/* {isHovered && (
+                    <TargetCursor 
+                        spinDuration={6}
+                        hideDefaultCursor={true}
+                    />
+                )} */}
             <div className="absolute inset-0 z-0">
                  <div className="absolute bottom-0 left-[-20%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255, 249, 253, 0.15),rgba(169, 240, 16, 0))]"></div>
                 <div className="absolute bottom-0 right-[-20%] top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(0, 33, 223, 0.15),rgba(230, 17, 17, 0))]"></div>
@@ -125,13 +131,12 @@ const ContactSection = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
-                {/* Floating Interest Images */}
                 {interests.map((item) => (
                     <motion.div
                         key={item.id}
                         variants={imageVariants}
                         className={`${styles.image_border} absolute ${item.position} z-${item.zIndex}`}
-
+						
                         style={{transform: `rotate(${item.rotation}deg)`, zIndex: item.zIndex}}
                     >
                         <div className="p-4 rounded-x text-cyan-400">
@@ -140,14 +145,13 @@ const ContactSection = () => {
                     </motion.div>
                 ))}
 
-                {/* Flipping Contact Card */}
                 <div className="flex justify-center items-center w-full h-full" style={{ perspective: '400px' }}>
                     <motion.div
                         variants={cardVariants}
                         className="relative w-[400px] max-w-l min-h-[500px] z-20"
                         style={{ transformStyle: 'preserve-3d' }}
-                    >
-                        <div className="absolute inset-0 w-full h-full rounded-2xl glass-card p-8 flex flex-col justify-center" style={{ backfaceVisibility: 'hidden' }}>
+						>
+                        <div className="absolute inset-0 w-full h-full rounded-2xl contact-card glass-card p-8 flex flex-col justify-center" style={{ backfaceVisibility: 'hidden',  }}>
 						<h2 className="font-futurism text-3xl font-bold text-white mb-2 text-center">Let&apos;s Connect!</h2>
 						<p className="text-gray-400 text-center mb-6">Have a project in mind or just want to say hi? <br /> Drop me a line.</p>
 						<form className="space-y-3 flex flex-col items-center" onSubmit={handleSubmit} noValidate>
@@ -159,7 +163,7 @@ const ContactSection = () => {
 									placeholder="Your Name"
 									value={name}
 									onChange={(e) => setName(e.target.value)}
-									className={styles.text_field}
+									className={`${styles.text_field} cursor-target`}
 									aria-invalid={!!submitError && !name.trim()}
 									aria-describedby="name-error"
 								/>
@@ -176,10 +180,10 @@ const ContactSection = () => {
 									placeholder="Your Email"
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
-									className={styles.text_field}
+									className={`${styles.text_field} cursor-target`}
 									aria-invalid={!!submitError && (!email.trim() || !emailRegex.test(email.trim()))}
 									aria-describedby="email-error"
-								/>
+									/>
 								{submitError && (!email.trim() || !emailRegex.test(email.trim())) && (
 									<p id="email-error" className="text-red-400 mt-[-3] text-[0.9rem] text-sm">*Please enter a valid email.</p>
 								)}
@@ -193,7 +197,7 @@ const ContactSection = () => {
 									rows={5}
 									value={message}
 									onChange={(e) => setMessage(e.target.value)}
-									className={styles.text_area_field}
+									className={`${styles.text_area_field} cursor-target`}
 									aria-invalid={!!submitError && !message.trim()}
 									aria-describedby="message-error"
 								/>
@@ -209,7 +213,7 @@ const ContactSection = () => {
 							<button
 								type="submit"
 								disabled={isSubmitting}
-								className={styles.contact_button}
+								className={`${styles.contact_button} cursor-target`}
 							>
 								{isSubmitting ? 'Sending…' : 'Send Message'}
 								<Send className="h-5 transition-transform group-hover:translate-x-1" />

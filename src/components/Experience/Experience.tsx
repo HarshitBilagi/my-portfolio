@@ -10,7 +10,7 @@ const experienceData = [
         company: "Code Inbound LLP",
         duration: "Sep. 2024 - Mar. 2025",
         description:
-            "Led the development of scalable React applications, contributed to a shared component library, and gained hands-on experience in a fast-paced agile environment.",
+            "Enhanced a Network Monitoring System by resolving key UI bugs and introducing new functionality. This involved fixing SNMP form field visibility, redesigning the interface table to align with Figma specifications, and integrating an API that allows users to export node asset data. These improvements contributed to better network performance, availability, and security monitoring.",
         logo: "/logos/logo-code_inbound_llp.png",
         technologies: ["React", "TypeScript", "CSS", "Tailwind CSS", "Swagger UI", "Git", "GitHub"]
             
@@ -20,7 +20,7 @@ const experienceData = [
         company: "Cognizant Technology Solutions",
         duration: "Mar. 2025 - Jun. 2025",
         description:
-            "Built and tested full-stack features for enterprise-level client projects, focusing on performance optimization and collaborating with cross-functional teams.",
+            "Upskilled in frontend development, Python, REST APIs, and Oracle Cloud technologies. And Developed a Vehicle Booking System using Oracle APEX and PL/SQL. My responsibilities included designing the database, managing backend booking workflows, and implementing automated email confirmations.",
         logo: "/logos/logo-cts.png",
         technologies: ["SQL", "PL/SQL", "CSS", "Oracle APEX", "Oracle VBCS", "JavaScript", "REST APIs"]
     },
@@ -29,7 +29,7 @@ const experienceData = [
         company: "Cognizant Technology Solutions",
         duration: "Jul. 2025 - Present",
         description:
-            "Built and tested full-stack features for enterprise-level client projects, focusing on performance optimization and collaborating with cross-functional teams.",
+            "Currently working on a key business application using Oracle APEX for the user interface and PL/SQL for all backend logic. I'm focused on building dynamic, data-driven reports, directly enhancing operational efficiency and improving data accessibility for the team.",
         logo: "/logos/logo-cts.png",
         technologies: ["SQL", "PL/SQL", "CSS", "Oracle APEX"]
     },
@@ -195,7 +195,7 @@ useEffect(() => {
                                         </p>
                                     </div>
                                 </div>
-                                <p className="text-gray-300 leading-relaxed">
+                                <p className="text-gray-300 text-sm/8 leading-relaxed font-normal ">
                                     {exp.description}
                                 </p>
                                 <div className="mt-8">

@@ -1,9 +1,9 @@
-import DarkVeils from "@/components/DarkVeil";
+import DarkVeils from "@/components/ReactComponents/DarkVeil";
 import MagicBento from "@/components/Skills";
 import Navbar from "@/components/navbar";
 import HorizontalScrollProjects from "@/components/Projects";
 import ExperienceSection from "@/components/Experience/Experience";
-import ContactSection from '@/components/Contact/Contact';
+import ContactSection from '../components/Contact/Contact';
 import HeroSection from "@/components/HeroSection/HeroSection";
 
 export default function HomePage() {

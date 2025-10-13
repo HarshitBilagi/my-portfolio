@@ -1,4 +1,4 @@
-import FuzzyText from "@/components/FuzzyText";
+import FuzzyText from "@/components/ReactComponents/FuzzyText";
 
 export default function NotFound() {
   return (

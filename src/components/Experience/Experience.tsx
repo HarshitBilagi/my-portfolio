@@ -22,7 +22,7 @@ const experienceData = [
         duration: "Mar. 2025 - Jun. 2025",
         description:
             "Upskilled in frontend development, Python, REST APIs, and Oracle Cloud technologies. And Developed a Vehicle Booking System using Oracle APEX and PL/SQL. My responsibilities included designing the database, managing backend booking workflows, and implementing automated email confirmations.",
-        logo: "/logos/logo-cts.png",
+        logo: "/logos/cognizant-logo-white.webp",
         technologies: ["SQL", "PL/SQL", "CSS", "Oracle APEX", "Oracle VBCS", "JavaScript", "REST APIs"]
     },
     {
@@ -31,7 +31,7 @@ const experienceData = [
         duration: "Jul. 2025 - Present",
         description:
             "Currently working on a key business application using Oracle APEX for the user interface and PL/SQL for all backend logic. I'm focused on building dynamic, data-driven reports, directly enhancing operational efficiency and improving data accessibility for the team.",
-        logo: "/logos/logo-cts.png",
+        logo: "/logos/cognizant-logo-white.webp",
         technologies: ["SQL", "PL/SQL", "CSS", "Oracle APEX"]
     },
 ];
@@ -186,23 +186,23 @@ useEffect(() => {
                                     <Image
                                         src={exp.logo}
                                         alt={`${exp.company} logo`}
-                                        width={200}
-                                        height={100}
+                                        width={180}
+                                        height={90}
                                         className="object-contain rounded-lg bg-gray-900"
                                     />
+                                </div>
                                     <div>
-                                        <h3 className="text-2xl font-bold mb-1">{exp.role}</h3>
+                                        <h2 className="text-2xl font-bold mb-1">{exp.role}</h2>
                                         <p className="text-cyan-400 font-medium">
                                             {exp.company} • {exp.duration}
                                         </p>
                                     </div>
-                                </div>
-                                <p className="text-gray-300 text-sm/8 leading-relaxed font-normal ">
+                                <p className="text-gray-300 text-sm/8 leading-[1.3em] font-normal ">
                                     {exp.description}
                                 </p>
                                 <div className="mt-8">
-                                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Skills</h4>
-                                    <ul className="flex flex-wrap gap-6">
+                                    <h3 className="text-lg font-semibold text-cyan-400 mb-3">Skills:</h3>
+                                    <ul className="flex flex-wrap gap-6 justify-center">
                                         {exp.technologies.map((tech) => (
                                             <li
                                                 key={tech}

@@ -19,9 +19,9 @@
     display: flex;        
     flex-direction: column; 
     align-items: center;
-    border: 5px solid #6e02ca;
-    border-radius: 1rem;    
     padding: 2rem;           
+    border-radius: 1rem;    
+    border: 5px solid #6e02ca;
     box-shadow: 0 25px 50px 7px rgba(45, 4, 248, 0.25); 
 }
 

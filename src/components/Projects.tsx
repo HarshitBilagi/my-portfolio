@@ -10,7 +10,7 @@ const projects = [
     description:
       "An agent that helps you revise solved LeetCode problems by sending you N number of solved problems with link everyday through mail.",
     imageUrl:
-      "/projects/p1.jpeg",
+      "/projects/p1.png",
     techStack: ["Python"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/LeetCode-Revision-Agent",
@@ -21,7 +21,7 @@ const projects = [
     description:
       "A blogging platform where users can create, edit, and share blog posts. A Full-Stack application with user authentication, authorization and responsive design.",
     imageUrl:
-      "/projects/p2.jpg",
+      "/projects/p2.png",
     techStack: ["Next.Js", "REST API", "Node.js", "Tailwind CSS", "MongoDB"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/blog-it",
@@ -160,7 +160,7 @@ const HorizontalScrollProjects: React.FC = () => {
                 key={project.title}
                 animate={{
                   x: offset * 60,
-                  y: offset * 20, 
+                  y: offset * 0, 
                   scale: 1 - Math.abs(offset) * 0.08,
                   opacity: 1 - Math.abs(offset) * 0.25,
                   zIndex: projects.length - Math.abs(offset),
@@ -180,7 +180,7 @@ const HorizontalScrollProjects: React.FC = () => {
           <button
             onClick={() => setActiveIndex((p) => Math.max(p - 1, 0))}
             disabled={activeIndex === 0}
-            className="disabled:opacity-30 disabled:cursor-not-allowed rounded-[50] w-[50px] p-3 
+            className="cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed rounded-[50] w-[50px] p-3 
                        bg-gradient-to-r from-[#00DFD8] to-[#007CF0] m-[3]
                        text-white shadow-lg shadow-cyan-500/30
                        transition-transform hover:scale-110 active:scale-95"
@@ -192,7 +192,7 @@ const HorizontalScrollProjects: React.FC = () => {
               setActiveIndex((p) => Math.min(p + 1, projects.length - 1))
             }
             disabled={activeIndex === projects.length - 1}
-            className="disabled:opacity-30 disabled:cursor-not-allowed rounded-full rounded-[50] w-[50px] p-3 
+            className="cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed rounded-full w-[50px] p-3 
                        bg-gradient-to-r from-[#FF0080] to-[#7928CA] m-[3]
                        text-white shadow-lg shadow-pink-500/30
                        transition-transform hover:scale-110 active:scale-95"
@@ -224,29 +224,32 @@ const ProjectCard = ({
 }) => {
   return (
     <div
-      className={`group relative h-full w-full overflow-hidden rounded-2xl shadow-2xl glass-card transition-all duration-300 ${
-        !isActive && "brightness-75"
-      }`}
+      className={`group relative h-full w-full overflow-hidden rounded-2xl ${!isActive ? "brightness-50" : ""}`}
+      style={{ background: "transparent" }}
     >
-      <div
-        className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-105"
-        style={{
-          backgroundImage: `url(${project.imageUrl})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+      <img
+        src={project.imageUrl}
+        alt={project.title}
+        loading="lazy"
+        className="absolute left-0 top-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-0"
+        style={{ objectPosition: "center center", display: "block" }}
       />
-      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/85 via-black/50 to-transparent" />
-      <div className="relative z-20 flex h-full flex-col justify-end p-8 text-white">
-        <h3 className="text-3xl font-bold mb-2 tracking-wide">
+
+      <div className="relative z-20 flex h-[50%] mt-[28%] glass-card flex-col justify-end p-8 text-white 
+             [mask-image:linear-gradient(to_top,black_65%,transparent_100%)]">
+        <h2 className="text-3xl font-bold mb-2 tracking-wide">
           {project.title}
-        </h3>
-        <p className="text-gray-300 mb-4 max-w-2xl">{project.description}</p>
-        <div className="flex flex-wrap gap-2 mb-6 justify-center">
+        </h2>
+
+        <p className="text-gray-200 mb-4 leading-[1.3em] max-w-2xl">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mb-[6] justify-center">
           {project.techStack.map((tech: string) => (
             <span
               key={tech}
-              className="bg-gray-800/70 backdrop-blur-sm text-[#00DFD8] text-xs font-semibold px-[5] my-[3] rounded-full"
+              className="bg-gray-800/60 backdrop-blur-sm text-[#00DFD8] text-xs font-semibold px-[10] py-[1] rounded-full"
             >
               {tech}
             </span>
@@ -258,11 +261,9 @@ const ProjectCard = ({
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex m-[5] items-center gap-2 font-bold text-white transition-all duration-300 
-                      rounded-lg 
-                      px-5 py-2.5 text-sm hover:scale-105 active:scale-95 shadow-md"
+            className="inline-flex m-[5] items-center gap-2 font-bold text-white transition-all duration-300 rounded-lg px-5 py-2.5 text-sm hover:scale-105 active:scale-95 shadow-md"
           >
-          <RadioTower size={24} />
+            <RadioTower size={24} />
           </a>
           <a
             href={project.githubUrl}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Harshit's Portfolio",
+  title: "Harshit Bilagi",
   description: "A futuristic portfolio built with Next.js and Three.js",
 };
 

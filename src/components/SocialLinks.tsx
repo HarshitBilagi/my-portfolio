@@ -181,13 +181,13 @@ export default function Dock({
 
           if (item.href) {
             return (
-              <a key={index} href={item.href} download={item.download} className='' style={{ color: '#6b13e6' }}>
+              <a key={index} href={item.href} download={item.download} className='' style={{ color: '#8d4ee4ff' }}>
                 {dockItemContent}
               </a>
             );
           } else {
             return (
-              <button key={index} onClick={item.onClick} className="p-0 m-0 bg-transparent border-none cursor-pointer" style={{ color: '#6b13e6' }}>
+              <button key={index} onClick={item.onClick} className="p-0 m-0 bg-transparent border-none cursor-pointer" style={{ color: '#8d4ee4ff' }}>
                 {dockItemContent}
               </button>
             );

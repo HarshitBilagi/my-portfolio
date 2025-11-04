@@ -25,7 +25,7 @@ const projects = [
     techStack: ["Next.Js", "REST API", "Node.js", "Tailwind CSS", "MongoDB"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/blog-it",
-    live: true,
+    live: false,
   },
   {
     title: "Portfolio Website",
@@ -36,7 +36,7 @@ const projects = [
     techStack: ["Next.Js", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP"],
     liveUrl: "https://my-portfolio-git-main-sirius-projects-9e638854.vercel.app/",
     githubUrl: "https://github.com/HarshitBilagi/my-portfolio",
-    live: true,
+    live: false,
   },
   {
     title: "Online FIR System",
@@ -55,10 +55,10 @@ const projects = [
       "A responsive customer survey form built with React that allows users to answer questions, stores results in Database, and uses 'useNavigate' for smooth redirection after submission.",
     imageUrl:
       "/projects/p5.png",
-    techStack: ["HTML5", "CSS3", "JavaScript"],
+    techStack: ["React", "JavaScript"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/Customer_Survey",
-    live: true,
+    live: false,
   },
   {
     title: "To-Do List",
@@ -69,7 +69,7 @@ const projects = [
     techStack: ["HTML5", "CSS3", "JavaScript"],
     liveUrl: "#",
     githubUrl: "https://github.com/HarshitBilagi/To-Do-List",
-    live: true,
+    live: false,
   },
 ];
 
@@ -175,12 +175,11 @@ const HorizontalScrollProjects: React.FC = () => {
           })}
         </div>
 
-        {/* Navigation */}
         <div className="flex gap-6 mt-10">
           <button
             onClick={() => setActiveIndex((p) => Math.max(p - 1, 0))}
             disabled={activeIndex === 0}
-            className="cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed rounded-[50] w-[50px] p-3 
+            className="cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed rounded-[50] w-[60px] p-[3] 
                        bg-gradient-to-r from-[#00DFD8] to-[#007CF0] m-[3]
                        text-white shadow-lg shadow-cyan-500/30
                        transition-transform hover:scale-110 active:scale-95"
@@ -192,7 +191,7 @@ const HorizontalScrollProjects: React.FC = () => {
               setActiveIndex((p) => Math.min(p + 1, projects.length - 1))
             }
             disabled={activeIndex === projects.length - 1}
-            className="cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed rounded-full w-[50px] p-3 
+            className="cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed rounded-full w-[60px] p-[3] 
                        bg-gradient-to-r from-[#FF0080] to-[#7928CA] m-[3]
                        text-white shadow-lg shadow-pink-500/30
                        transition-transform hover:scale-110 active:scale-95"

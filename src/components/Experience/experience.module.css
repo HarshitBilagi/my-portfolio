@@ -14,12 +14,12 @@
     width: 100%;            
     max-width: 650px;       
     height: 420px;         
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px); 
     display: flex;        
     flex-direction: column; 
     align-items: center;
     padding: 2rem;           
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px); 
     border-radius: 1rem;    
     border: 5px solid #6e02ca;
     box-shadow: 0 25px 50px 7px rgba(45, 4, 248, 0.25); 

@@ -5,6 +5,7 @@ import HorizontalScrollProjects from "@/components/Projects";
 import ExperienceSection from "@/components/Experience/Experience";
 import ContactSection from '../components/Contact/Contact';
 import HeroSection from "@/components/HeroSection/HeroSection";
+import Footer from "@/components/Footer/footer";
 
 export default function HomePage() {
   return (
@@ -102,6 +103,7 @@ export default function HomePage() {
         <section id="contact" style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
           <ContactSection />
         </section>
+        <Footer /> 
       </div>
     </main>
   );

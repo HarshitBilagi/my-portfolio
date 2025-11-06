@@ -553,7 +553,7 @@ const MagicBento: React.FC<BentoProps> = ({
 
   const renderCardContent = (card: BentoCardProps) => (
     <div className="p-[1rem] flex flex-col  h-full">
-      <div className="card__header mb-4">
+      <div className="card__header mb-4 bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent">
         <span className="card__label text-base font-semibold">{card.label}</span>
       </div>
 

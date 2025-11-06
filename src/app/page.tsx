@@ -1,6 +1,6 @@
 import DarkVeils from "@/components/ReactComponents/DarkVeil";
 import MagicBento from "@/components/Skills";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar/navbar";
 import HorizontalScrollProjects from "@/components/Projects";
 import ExperienceSection from "@/components/Experience/Experience";
 import ContactSection from '../components/Contact/Contact';

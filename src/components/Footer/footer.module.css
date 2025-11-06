@@ -23,6 +23,9 @@
 .footer_left h2 {
   margin-top: 0;
   font-size: 1.8rem;
+  background: linear-gradient(90deg, #56ccf2, #2f80ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .copyright {
@@ -34,6 +37,9 @@
 .footer_right h3 {
   margin-top: 0;
   font-size: 1.5rem;
+  background: linear-gradient(90deg, #56ccf2, #2f80ed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .email_link {

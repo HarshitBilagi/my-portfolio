@@ -192,7 +192,7 @@ useEffect(() => {
                                     />
                                 </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold mb-1">{exp.role}</h2>
+                                        <h2 className="text-2xl bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent font-bold mb-1">{exp.role}</h2>
                                         <p className="text-cyan-400 font-medium">
                                             {exp.company} • {exp.duration}
                                         </p>
@@ -201,7 +201,7 @@ useEffect(() => {
                                     {exp.description}
                                 </p>
                                 <div className="mt-8">
-                                    <h3 className="text-lg font-semibold text-cyan-400 mb-3">Skills:</h3>
+                                    <h3 className="text-lg font-semibold bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent text-cyan-400 mb-3">Skills:</h3>
                                     <ul className="flex flex-wrap gap-6 justify-center">
                                         {exp.technologies.map((tech) => (
                                             <li

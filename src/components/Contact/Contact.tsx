@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 import styles from '@/components/Contact/contact.module.css';
 import Image from 'next/image';
-// import TargetCursor from '@/components/ReactComponents/TargetCursor';
 
 const interests = [
     // { id: 'anime', icon: <Image src="/interests/zenitsu-anime.png" alt="anime" width={400} height={400} />, position: 'top-2/4 left-[5%]', delay: 0.1, rotation: -15, zIndex: 20 },
@@ -145,7 +144,7 @@ const ContactSection = () => {
                         style={{ transformStyle: 'preserve-3d' }}
 						>
                         <div className="absolute inset-0 w-full h-full rounded-2xl contact-card glass-card p-8 flex flex-col justify-center" style={{ backfaceVisibility: 'hidden',  }}>
-						<h2 className="font-futurism text-3xl font-bold text-white mb-2 text-center">Let&apos;s Connect!</h2>
+						<h2 className="font-futurism bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent text-3xl font-bold mb-2 text-center">Let&apos;s Connect!</h2>
 						<p className="text-gray-400 text-center mb-6">Have a project in mind or just want to say hi? <br /> Drop me a line.</p>
 						<form className="space-y-3 flex flex-col items-center" onSubmit={handleSubmit} noValidate>
 							<div className="w-[90%]">

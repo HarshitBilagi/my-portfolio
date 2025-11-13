@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'NocturneSerif-Regular';
+  src: url('/fonts/NocturneSerif-Regular.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.footer_left h2 {
+  font-family: 'NocturneSerif-Regular', Arial, sans-serif;
+}
+
+.footer_left h3 {
+  font-family: 'NocturneSerif-Regular', Arial, sans-serif;
+}
+
 .footer_container {
   background-color: #00000024;
   backdrop-filter: blur(10px);

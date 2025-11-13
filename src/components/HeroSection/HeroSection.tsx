@@ -18,7 +18,7 @@ export default function HeroSection() {
                 boxSizing: "border-box",
             }}
         >
-            <div style={{ textAlign: "center", maxWidth: "700px" }}>
+            <div id="myName" style={{ textAlign: "center", maxWidth: "700px" }}>
                 <SplitText
                     text="Harshit Bilagi"
                     tag="h1"

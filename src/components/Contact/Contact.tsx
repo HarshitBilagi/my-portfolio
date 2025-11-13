@@ -144,8 +144,8 @@ const ContactSection = () => {
                         style={{ transformStyle: 'preserve-3d' }}
 						>
                         <div className="absolute inset-0 w-full h-full rounded-2xl contact-card glass-card p-8 flex flex-col justify-center" style={{ backfaceVisibility: 'hidden',  }}>
-						<h2 className="font-futurism bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent text-3xl font-bold mb-2 text-center">Let&apos;s Connect!</h2>
-						<p className="text-gray-400 text-center mb-6">Have a project in mind or just want to say hi? <br /> Drop me a line.</p>
+						<h2 className="font-futurism bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent text-[2rem] mt-[-1] font-bold text-center">Let&apos;s Connect!</h2>
+						<p className="text-gray-400 text-center leading-[1.3em] mb-[2rem]">Have an idea in mind or just want to say hi? <br /> Drop me a line.</p>
 						<form className="space-y-3 flex flex-col items-center" onSubmit={handleSubmit} noValidate>
 							<div className="w-[90%]">
 								<label htmlFor="name" className="sr-only">Your Name</label>

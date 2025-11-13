@@ -49,7 +49,7 @@ export default function HomePage() {
               height: "100%",
             }}
           >
-            <h1>Skills</h1>
+            <h2 style={{ fontSize: "2.5rem"}} className="font-futurism bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent">Skills</h2>
             <div style={{ position: "relative", marginTop: "4rem" }}>
               <MagicBento
                 textAutoHide={true}
@@ -77,7 +77,7 @@ export default function HomePage() {
           }}
         >
           <div style={{ position: "relative", zIndex: 1 }}>
-            <h1>Projects</h1>
+            <h2 style={{ fontSize: "2.5rem"}} className="font-futurism bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent">Projects</h2>
             <div style={{ marginTop: "-6rem" }}>
               <HorizontalScrollProjects />
             </div>
@@ -94,7 +94,7 @@ export default function HomePage() {
           }}
         >
           <div style={{ position: "relative", zIndex: 1 }}>
-            <h1>Experience</h1>
+            <h2 style={{ fontSize: "2.5rem"}} className="font-futurism bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent">Experience</h2>
             <div style={{ marginTop: "-5rem" }}>
               <ExperienceSection />
             </div>

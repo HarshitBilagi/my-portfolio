@@ -6,6 +6,17 @@ import { Github, ChevronLeft, ChevronRight, RadioTower } from "lucide-react";
 
 const projects = [
   {
+    title: "MNPI Agent",
+    description:
+      "An AI-powered agent that verifies documents for Material Non-Public Information (MNPI) using advanced NLP techniques to ensure compliance and mitigate risks.",
+    imageUrl:
+      "/projects/MNPI.png",
+    techStack: ["Python"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/HarshitBilagi/mnpi-agent.git",
+    live: false,
+  },
+  {
     title: "LeetCode Revision Agent",
     description:
       "An agent that helps you revise solved LeetCode problems by sending you N number of solved problems with link everyday through mail.",

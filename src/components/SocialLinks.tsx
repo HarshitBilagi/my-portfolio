@@ -159,7 +159,14 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 border-neutral-700 border-2 pb-2 px-4 rounded-2xl`}
+        // className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 border-neutral-700 border-2 pb-2 px-4 rounded-2xl`}
+        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 
+                    flex items-end w-fit 
+                    gap-2 sm:gap-3 md:gap-4 
+                    border-neutral-700 border-2 pb-2 
+                    sm:w-[200px] md:w-[200px] 
+                    rounded-2xl`}
+
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"

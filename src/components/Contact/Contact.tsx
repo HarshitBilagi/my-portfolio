@@ -140,7 +140,7 @@ const ContactSection = () => {
                 <div className="flex justify-center items-center w-full h-full" style={{ perspective: '400px' }}>
                     <motion.div
                         variants={cardVariants}
-                        className="relative w-[400px] max-w-l min-h-[500px] z-20"
+                        className="relative w-[400px] max-w-l min-h-[500px] z-20 sm:w-[300px] md:w-[300px]"
                         style={{ transformStyle: 'preserve-3d' }}
 						>
                         <div className="absolute inset-0 w-full h-full rounded-2xl contact-card glass-card p-8 flex flex-col justify-center" style={{ backfaceVisibility: 'hidden',  }}>

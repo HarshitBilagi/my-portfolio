@@ -16,13 +16,43 @@ const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const found = navLinks.find((l) => l.href === window.location.hash);
-      if (found) setActiveLink(found.name);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Find the corresponding nav link name by href (which matches #id)
+            const matchedLink = navLinks.find(
+              (link) => link.href === `#${entry.target.id}`
+            );
+            if (matchedLink) {
+              setActiveLink(matchedLink.name);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-45% 0px -45% 0px", // Trigger when element is near the middle of the viewport
+      }
+    );
+
+    // Observe all sections defined in navLinks
+    navLinks.forEach((link) => {
+      const id = link.href.substring(1);
+      const el = document.getElementById(id);
+      if (el) {
+        observer.observe(el);
+      }
+    });
+
+    return () => {
+      navLinks.forEach((link) => {
+        const id = link.href.substring(1);
+        const el = document.getElementById(id);
+        if (el) {
+          observer.unobserve(el);
+        }
+      });
     };
-    window.addEventListener("hashchange", handleHashChange);
-    handleHashChange();
-    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
   return (

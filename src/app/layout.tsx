@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Harshit Bilagi",
-  description: "A futuristic portfolio built with Next.js and Three.js",
+  description: "Portfolio of Harshit Bilagi",
 };
 
 export default function RootLayout({

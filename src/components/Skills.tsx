@@ -551,21 +551,26 @@ const MagicBento: React.FC<BentoProps> = ({
   const isMobile = useMobileDetection();
   const shouldDisableAnimations = disableAnimations || isMobile;
 
-  const renderCardContent = (card: BentoCardProps) => (
-    <div className="p-[1rem] flex flex-col  h-full">
-      <div className="card__header mb-4 bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent">
-        <span className="card__label text-base font-semibold">{card.label}</span>
+  const renderCardContent = (card: BentoCardProps, mobile = false) => (
+    <div className="p-[1rem] flex flex-col h-full">
+      <div className="card__header mb-[1rem] bg-gradient-to-r from-[#56ccf2] to-[#2f80ed] bg-clip-text text-transparent">
+        <span className={`card__label font-bold ${mobile ? 'text-4xl' : 'text-base'}`}>{card.label}</span>
       </div>
 
-      <div className="card__skills flex mt-[2rem] flex-wrap justify-center gap-4">
+      <div className={`card__skills mt-3 ${
+        mobile
+          ? 'grid grid-cols-5 gap-x-2 gap-y-5 mb-[1rem] justify-items-center'
+          : 'flex flex-wrap justify-center gap-4 mt-[2rem]'
+      }`}>
         {card.skills?.map((skill, skillIndex) => (
-          <div 
-            key={skillIndex} 
-            className="flex flex-col items-center gap-2 my-[0.5rem] transition-transform duration-300 hover:scale-110"
+          <div
+            key={skillIndex}
+            className={`flex flex-col items-center gap-1 transition-transform duration-300 hover:scale-110 ${
+              mobile ? 'mb-[6]' : 'my-[0.5rem]'
+            }`}
           >
             {iconMap[skill] || <span>{skill}</span>}
-            
-            <span className="text-gray-300 text-[1rem] m-[0.5rem]">{skill}</span>
+            <span className={`text-gray-300 ${mobile ? 'text-[0.65rem] text-center leading-tight' : 'text-[1rem] m-[0.5rem]'}`}>{skill}</span>
           </div>
         ))}
       </div>
@@ -691,6 +696,26 @@ const MagicBento: React.FC<BentoProps> = ({
               min-height: 180px;
             }
           }
+
+          @media (max-width: 767px) {
+            .mobile-stack-container {
+              display: flex;
+              flex-direction: column;
+              width: 85vw;
+              margin: 0 0.5rem 0 -1.65rem;
+              padding-bottom: 5rem;
+              box-sizing: border-box;
+            }
+
+            .mobile-stack-container .card {
+              width: 100% !important;
+              max-width: 100% !important;
+            }
+
+            .mobile-stack-card + .mobile-stack-card {
+              margin-top: -4rem;
+            }
+          }
         `}
       </style>
 
@@ -705,23 +730,70 @@ const MagicBento: React.FC<BentoProps> = ({
       )}
 
       <BentoCardGrid gridRef={gridRef}>
-        <div className="card-responsive grid gap-2 w-[100%]">
-          {cardData.map((card, index) => {
-            const baseClassName = `card flex flex-col justify-between min-h-[300px] relative mt-[-3rem] mb-[1rem] w-[600px] max-w-full p-5 rounded-[10px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
-              enableBorderGlow ? 'card--border-glow' : ''
+        {isMobile ? (
+          /* ── Mobile: stacked card layout ── */
+          <div className="mobile-stack-container">
+            {cardData.map((card, index) => {
+              // z-index: last card (Backend) on top, first card (Languages) at bottom
+              const zIndex = (index + 1) * 10;  // Languages=10, Frontend=20, Tools=30, Backend=40
+
+              const baseClassName = `card mobile-stack-card flex flex-col relative border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out ${
+                enableBorderGlow ? 'card--border-glow' : ''
               }`;
 
-            const cardStyle = {
-              backgroundColor: card.color || 'var(--background-dark)',
-              borderColor: 'var(--border-color)',
-              color: 'var(--white)',
-              '--glow-x': '50%',
-              '--glow-y': '50%',
-              '--glow-intensity': '0',
-              '--glow-radius': '200px'
-            } as React.CSSProperties;
+              const cardStyle = {
+                backgroundColor: card.color || 'var(--background-dark)',
+                borderColor: 'var(--border-color)',
+                color: 'var(--white)',
+                '--glow-x': '50%',
+                '--glow-y': '50%',
+                '--glow-intensity': '0',
+                '--glow-radius': '200px',
+                zIndex,
+                borderRadius: '1rem 1rem 1rem 1rem',
+                // boxShadow: '0 -10px 20px -5px rgba(0,0,0,0.4)',
+                paddingTop: '1rem',
+                paddingBottom: '6.5rem',
+                paddingLeft: '1rem',
+                paddingRight: '1rem',
+              } as React.CSSProperties;
 
-            return (
+              return (
+                <ParticleCard
+                  key={index}
+                  className={baseClassName}
+                  style={cardStyle}
+                  disableAnimations={shouldDisableAnimations}
+                  particleCount={particleCount}
+                  glowColor={glowColor}
+                  enableTilt={enableTilt}
+                  clickEffect={clickEffect}
+                  enableMagnetism={enableMagnetism}
+                >
+                  {renderCardContent(card, true)}
+                </ParticleCard>
+              );
+            })}
+          </div>
+        ) : (
+          /* ── Desktop: original grid layout ── */
+          <div className="card-responsive grid gap-2 w-[100%]">
+            {cardData.map((card, index) => {
+              const baseClassName = `card flex flex-col justify-between min-h-[300px] relative mt-[-3rem] mb-[1rem] w-[600px] max-w-full p-5 rounded-[10px] border border-solid font-light overflow-hidden transition-all duration-300 ease-in-out hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)] ${
+                enableBorderGlow ? 'card--border-glow' : ''
+              }`;
+
+              const cardStyle = {
+                backgroundColor: card.color || 'var(--background-dark)',
+                borderColor: 'var(--border-color)',
+                color: 'var(--white)',
+                '--glow-x': '50%',
+                '--glow-y': '50%',
+                '--glow-intensity': '0',
+                '--glow-radius': '200px'
+              } as React.CSSProperties;
+
+              return (
                 <ParticleCard
                   key={index}
                   className={baseClassName}
@@ -735,9 +807,10 @@ const MagicBento: React.FC<BentoProps> = ({
                 >
                   {renderCardContent(card)}
                 </ParticleCard>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </BentoCardGrid>
     </>
   );

@@ -10,6 +10,13 @@
     z-index: 0;
 }
 
+.dockContainer {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 @font-face {
   font-family: 'Futurism';
   src: url('/fonts/Futurism.otf') format('opentype');
@@ -52,6 +59,11 @@
 
     .description {
         font-size: 0.9rem;
-        padding: 0 20px; 
+        padding: 0 20px;
+        margin-bottom: 150px;
+    }
+
+    .dockContainer {
+        bottom: 100px;
     }
 }

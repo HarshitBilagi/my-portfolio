@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, Text3D, Center, Float } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useAppStore } from "./store";
@@ -81,6 +81,52 @@ export default function RoomSetup() {
           color="#60a5fa"
           position={[0, 0, 0.1]}
         />
+      </group>
+
+      {/* 3D Intro Text */}
+      <group position={[80, 60, 0]} rotation={[0, Math.PI / 2, 0]}>
+        <Float speed={5} rotationIntensity={0.1} floatIntensity={0.5}>
+          <Center>
+            <Text3D
+              font="/fonts/Inter_Bold.json"
+              size={1.2}
+              height={0.5}
+              curveSegments={12}
+              // bevelEnabled
+              bevelThickness={0.1}
+              bevelSize={0.05}
+              bevelOffset={0}
+              bevelSegments={5}
+              lineHeight={1.4}
+              letterSpacing={0.02}
+            >
+              {`Hey there! \nI'm too lazy to walk you to my portfolio.`}
+              <meshStandardMaterial color="#E0E6ED" roughness={0.2} metalness={0.6} />
+            </Text3D>
+          </Center>
+        </Float>
+      </group>
+      <group position={[80, 35, -8.5]} rotation={[0, Math.PI / 2, 0]}>
+        <Float speed={5} rotationIntensity={0.1} floatIntensity={0.5}>
+          <Center>
+            <Text3D
+              font="/fonts/Inter_Bold.json"
+              size={1.2}
+              height={0.5}
+              curveSegments={12}
+              // bevelEnabled
+              bevelThickness={0.1}
+              bevelSize={0.05}
+              bevelOffset={0}
+              bevelSegments={5}
+              lineHeight={1.4}
+              letterSpacing={0.04}
+            >
+              {`Use the scroll wheel;\nI'll meet you at the laptop.`}
+              <meshStandardMaterial color="#E0E6ED" roughness={0.2} metalness={0.6} />
+            </Text3D>
+          </Center>
+        </Float>
       </group>
     </group>
   );

@@ -33,6 +33,21 @@ body {
   font-family: 'NocturneSerif-Regular', Arial, sans-serif;
 }
 
+/* Mobile fixes ONLY */
+@media (max-width: 768px) {
+  .darkveil-bg {
+    height: 100dvh !important;
+    width: 100vw !important;
+    overflow: hidden;
+  }
+
+  .darkveil-bg canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+}
+
 #myName {
   font-family: 'Futurism', Arial, sans-serif;
   /* font-weight: bold; */

@@ -61,6 +61,7 @@ const PortfolioContent = () => {
           height: "100%",
           pointerEvents: "none",
         }}
+        className="darkveil-bg"
       >
         <DarkVeils />
       </div>

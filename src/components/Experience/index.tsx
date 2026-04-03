@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useRef } from "react";
 import { useScroll } from "framer-motion";
-import Lenis from 'lenis';
+// import Lenis removed
 import styles from './experience.module.scss';
 import ExperienceCard from './ExperienceCard';
 import { experienceData } from './experienceData';
@@ -15,17 +15,7 @@ export default function ExperienceSection() {
         offset: ['start start', 'end end']
     });
 
-    useEffect(() => {
-        const lenis = new Lenis();
-        function raf(time: number) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-        requestAnimationFrame(raf);
-        return () => {
-            lenis.destroy();
-        };
-    }, []);
+    // Lenis initialization moved to PortfolioContent
 
     return (
         <main ref={container} className={styles.main}>

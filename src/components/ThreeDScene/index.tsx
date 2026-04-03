@@ -16,32 +16,47 @@ export default function ThreeDScene() {
       camera={{ position: [140.14, 50.6, -1.5], fov: 45 }}
     >
       {/* ── Ambient fill ── */}
-      <ambientLight intensity={0.35} color="#1a1a2e" />
+      <ambientLight intensity={0.5} color="#2c2c6eff" />
 
-      {/* ── Key light — cool moonlight from window side ── */}
-      <directionalLight
-        position={[20, 25, 5]}
-        intensity={1.8}
-        color="#b4c6e7"
-        castShadow
-        shadow-mapSize={[2048, 2048]}
-      />
+      {/* ── Key light — cool moonlight from window side ── */}
+        <directionalLight
+          position={[2.7, 27.55, -12.5]}
+          intensity={1.8}
+          color="#2067eaff"
+          castShadow
+          // shadow-mapSize={[2048, 2048]}
+        />
 
-      {/* ── Rim / back light — purple tint for depth ── */}
-      <directionalLight
-        position={[-15, 20, -10]}
-        intensity={0.6}
-        color="#4a3f6b"
-      />
+      {/* ── Warm desk lamp glow ── */}
+      <pointLight
+        position={[7.7, 50.55, -12.5]}
+        intensity={40}
+        color="#ffa726"
+        distance={21}
+        decay={0.1}
+      />
 
-      {/* ── Warm desk lamp glow ── */}
-      <pointLight
-        position={[3, 44.5, 1.5]}
-        intensity={1.2}
-        color="#ffa726"
-        distance={12}
-        decay={2}
-      />
+      {/* Left Under-Desk Light */}
+  <pointLight
+    position={[1.0, 28.0, 20.0]} // Lowered Y to ensure it's under the desk
+    intensity={15}               // Reduced to prevent color clipping
+    color="#2067ea"             
+    distance={100}
+    decay={0.5}
+    castShadow                  // 3. Enable shadow casting
+    shadow-mapSize={[512, 512]} // Performance optimization for shadows
+  />
+
+  {/* Right Under-Desk Light */}
+  <pointLight
+    position={[1.0, 28.0, -15.0]} 
+    intensity={15}
+    color="#2067ea"
+    distance={40}
+    decay={0.5}
+    castShadow
+    shadow-mapSize={[512, 512]} // Performance optimization for shadows
+  />
 
       {/* 
         ScrollControls remains enabled so it remembers its 0.98 offset. 

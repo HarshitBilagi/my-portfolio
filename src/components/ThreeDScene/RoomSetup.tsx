@@ -7,7 +7,7 @@ import * as THREE from "three";
 import { useAppStore } from "./store";
 
 export default function RoomSetup() {
-  const { scene } = useGLTF("/models/room_scene.glb", true) as any;
+  const { scene } = useGLTF("/models/room_scene_v3.glb", true) as any;
   const powerOn = useAppStore((state) => state.powerOn);
   const setPowerOn = useAppStore((state) => state.setPowerOn);
 
@@ -86,4 +86,4 @@ export default function RoomSetup() {
   );
 }
 
-useGLTF.preload("/models/room_scene.glb");
+useGLTF.preload("/models/room_scene_v3.glb");

@@ -11,7 +11,9 @@ export default function HomePage() {
   useEffect(() => {
     // Optional: force scroll to top when 2D view is toggled
     if (isIntroFinished) {
-      window.scrollTo(0, 0);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 50); // slight delay to allow React to mount/display the DOM properly without tug-of-war
     }
   }, [isIntroFinished]);
 

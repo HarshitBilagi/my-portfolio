@@ -31,11 +31,18 @@ const PortfolioContent = () => {
     const handleWheel = (e: WheelEvent) => {
       // If we are at the very top of the 2D page and scroll UP
       if (window.scrollY <= 0 && e.deltaY < 0) {
-        setIsIntroFinished(false);
+        // Prevent Lenis from continuing to parse the negative scroll 
+        // to avoid tug-of-war while React handles the state switch
+        lenis.stop();
+        
+        // Small delay so state switch doesn't block main thread mid-frame
+        setTimeout(() => {
+          setIsIntroFinished(false);
+        }, 10);
       }
     };
 
-    window.addEventListener("wheel", handleWheel);
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
       lenis.destroy();

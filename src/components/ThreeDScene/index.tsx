@@ -44,10 +44,11 @@ export default function ThreeDScene() {
       />
 
       {/* 
-        ScrollControls disabled when zoomed in so wheel events 
-        pass through to the portfolio HTML container 
+        ScrollControls remains enabled so it remembers its 0.98 offset. 
+        It naturally is ignored when the 2D portfolio covers it because 
+        the portfolio has z-index and intercepts the wheel events.
       */}
-      <ScrollControls pages={2} damping={0.2} enabled={!isIntroFinished}>
+      <ScrollControls pages={2} damping={0.2} enabled={true}>
         <CameraController />
         <RoomSetup />
       </ScrollControls>

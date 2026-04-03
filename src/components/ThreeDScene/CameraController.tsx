@@ -41,8 +41,8 @@ export default function CameraController() {
     const currentLookAt = new THREE.Vector3().lerpVectors(initialLookAt, monitorLookAt, factor);
     state.camera.lookAt(currentLookAt);
 
-    // At exact 1.0, switch to 2D portfolio
-    if (offset >= 0.999) {
+    // At 0.98, switch to 2D portfolio to eliminate dead scroll
+    if (offset >= 0.98) {
       state.camera.position.copy(monitorPosition);
       state.camera.lookAt(monitorLookAt);
       setIsIntroFinished(true);

@@ -1,15 +1,32 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState, useCallback } from "react";
 import { useGLTF, Text3D, Center, Float } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useAppStore } from "./store";
 
+function useIsMobile(breakpoint = 768) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  const check = useCallback(() => {
+    setIsMobile(window.innerWidth < breakpoint);
+  }, [breakpoint]);
+
+  useEffect(() => {
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [check]);
+
+  return isMobile;
+}
+
 export default function RoomSetup() {
   const { scene } = useGLTF("/models/room_scene_v3.glb", true) as any;
   const powerOn = useAppStore((state) => state.powerOn);
   const setPowerOn = useAppStore((state) => state.setPowerOn);
+  const isMobile = useIsMobile();
 
   const switchRef = useRef<THREE.Mesh>(null);
 
@@ -39,6 +56,12 @@ export default function RoomSetup() {
       });
     }
   }, [scene]);
+
+  // Responsive text config
+  const textSize = isMobile ? 0.9 : 1.2;
+  const textHeight = isMobile ? 0.3 : 0.5;
+  const topGroupPos: [number, number, number] = isMobile ? [65, 62, -4] : [80, 60, 0];
+  const bottomGroupPos: [number, number, number] = isMobile ? [65, 35, -8.5] : [80, 35, -8.5];
 
   return (
     <group>
@@ -84,13 +107,13 @@ export default function RoomSetup() {
       </group>
 
       {/* 3D Intro Text */}
-      <group position={[80, 60, 0]} rotation={[0, Math.PI / 2, 0]}>
-        <Float speed={5} rotationIntensity={0.1} floatIntensity={0.5}>
+      <group position={topGroupPos} rotation={[0, Math.PI / 2, 0]}>
+        <Float speed={5} rotationIntensity={0.5} floatIntensity={0.5}>
           <Center>
             <Text3D
               font="/fonts/Inter_Bold.json"
-              size={1.2}
-              height={0.5}
+              size={textSize}
+              height={textHeight}
               curveSegments={12}
               // bevelEnabled
               bevelThickness={0.1}
@@ -106,13 +129,13 @@ export default function RoomSetup() {
           </Center>
         </Float>
       </group>
-      <group position={[80, 35, -8.5]} rotation={[0, Math.PI / 2, 0]}>
-        <Float speed={5} rotationIntensity={0.1} floatIntensity={0.5}>
+      <group position={bottomGroupPos} rotation={[0, Math.PI / 2, 0]}>
+        <Float speed={5} rotationIntensity={0.5} floatIntensity={0.5}>
           <Center>
             <Text3D
               font="/fonts/Inter_Bold.json"
-              size={1.2}
-              height={0.5}
+              size={textSize}
+              height={textHeight}
               curveSegments={12}
               // bevelEnabled
               bevelThickness={0.1}

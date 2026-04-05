@@ -1,4 +1,3 @@
-import DarkVeils from "@/components/ReactComponents/DarkVeil";
 import MagicBento from "@/components/Skills";
 import Navbar from "@/components/Navbar/navbar";
 import HorizontalScrollProjects from "@/components/Projects/HorizontalScrollProjects";
@@ -52,19 +51,23 @@ const PortfolioContent = () => {
 
   return (
     <div className="portfolio-content-wrapper w-full relative">
-      <div
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
         style={{
           position: "fixed",
           inset: 0,
           zIndex: 0,
           width: "100%",
           height: "100%",
+          objectFit: "cover",
           pointerEvents: "none",
         }}
-        className="darkveil-bg"
       >
-        <DarkVeils />
-      </div>
+        <source src="/videos/dark_veil_bg_vid.webm" type="video/webm" />
+      </video>
       
       <div style={{ position: "relative", zIndex: 1 }}>
         <Navbar />

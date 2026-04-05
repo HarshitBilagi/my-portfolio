@@ -6,14 +6,6 @@ import { Send } from 'lucide-react';
 import styles from '@/components/Contact/contact.module.css';
 import Image from 'next/image';
 
-const interests = [
-    // { id: 'anime', icon: <Image src="/interests/zenitsu-anime.png" alt="anime" width={400} height={400} />, position: 'top-2/4 left-[5%]', delay: 0.1, rotation: -15, zIndex: 20 },
-    // { id: 'minecraft', icon: <Image src="/interests/minecraft.pn" alt="minecraft" width={500} height={500} />, position: 'top-[10%] right-[33%]', delay: 0.3, rotation: 10, zIndex: 0 },
-    // { id: 'ironman', icon: <Image src="/interests/ironman.png" alt="ironman" width={200} height={200} />, position: 'bottom-[55%] left-[20%]', delay: 0.5, rotation: 5, zIndex: 10 },
-    // { id: 'rb21 f1 car', icon: <Image src="/interests/rb21.png" alt="F1 car" width={600} height={130} />, position: 'bottom-[0] left-[30%]', delay: 0.2, rotation: -5, zIndex: 40 },
-    // { id: 'cards', icon: <Image src="/interests/cards.png" alt="cards" width={200} height={200} />, position: 'top-[8%] left-[8%]', delay: 0.2, rotation: -5, zIndex: 5 },
-];
-
 const ContactSection = () => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
@@ -122,20 +114,6 @@ const ContactSection = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
             >
-				{/* IMAGES HERE  */}
-                {/* {interests.map((item) => (
-                    <motion.div
-                        key={item.id}
-                        variants={imageVariants}
-                        className={`${styles.image_border} absolute ${item.position} z-${item.zIndex}`}
-						
-                        style={{transform: `rotate(${item.rotation}deg)`, zIndex: item.zIndex}}
-                    >
-                        <div className="p-4 rounded-x text-cyan-400">
-                           {item.icon}
-                        </div>
-                    </motion.div>
-                ))} */}
 
                 <div className="flex justify-center items-center w-full h-full" style={{ perspective: '400px' }}>
                     <motion.div

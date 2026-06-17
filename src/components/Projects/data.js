@@ -1,5 +1,14 @@
 export const projects = [
   {
+    title: "FinMate",
+    description: "FinMate is a comprehensive personal finance management application built with Flutter and FastAPI, designed to help users track, analyze, and manage their finances effortlessly.",
+    imageUrl: "/projects/finmate.png",
+    techStack: ["Flutter", "FastAPI", "Python", "Supabase", "Firebase"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/HarshitBilagi/FinMate.git",
+    live: false,
+  },
+  {
     title: "MNPI Agent",
     description: "An AI-powered agent that verifies documents for Material Non-Public Information (MNPI) using advanced NLP techniques to ensure compliance and mitigate risks.",
     imageUrl: "/projects/MNPI.png",

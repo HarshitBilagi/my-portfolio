@@ -1,5 +1,14 @@
 export const projects = [
   {
+    title: "Hybrid Token-Efficient Routing Agent",
+    description: "An autonomous routing layer that decides at inference time whether to send a query to a lightweight local model (Intel AI Boost NPU) or a powerful remote LLM (Groq), optimizing for token usage while maintaining accuracy constraints.",
+    imageUrl: "/projects/HTERA.png",
+    techStack: ["Python", "FastAPI", "Intel AI Boost NPU", "Groq", "OpenVINO"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/HarshitBilagi/Hybrid-Token-Efficient-Routing-Agent",
+    live: false,
+  },
+  {
     title: "FinMate",
     description: "FinMate is a comprehensive personal finance management application built with Flutter and FastAPI, designed to help users track, analyze, and manage their finances effortlessly.",
     imageUrl: "/projects/finmate.png",
@@ -27,15 +36,6 @@ export const projects = [
     live: false,
   },
   {
-    title: "BlogIt",
-    description: "A blogging platform where users can create, edit, and share blog posts. A Full-Stack application with user authentication, authorization and responsive design.",
-    imageUrl: "/projects/p2.png",
-    techStack: ["Next.Js", "REST API", "Node.js", "Tailwind CSS", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/HarshitBilagi/blog-it",
-    live: false,
-  },
-  {
     title: "Portfolio Website",
     description: "A modern, responsive portfolio website built with Next.js and Tailwind CSS to showcase projects, skills, and experience.",
     imageUrl: "/projects/p3.png",
@@ -43,6 +43,15 @@ export const projects = [
     liveUrl: "https://my-portfolio-git-main-sirius-projects-9e638854.vercel.app/",
     githubUrl: "https://github.com/HarshitBilagi/my-portfolio",
     live: true,
+  },
+  {
+    title: "BlogIt",
+    description: "A blogging platform where users can create, edit, and share blog posts. A Full-Stack application with user authentication, authorization and responsive design.",
+    imageUrl: "/projects/p2.png",
+    techStack: ["Next.Js", "REST API", "Node.js", "Tailwind CSS", "MongoDB"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/HarshitBilagi/blog-it",
+    live: false,
   },
   {
     title: "Online FIR System",

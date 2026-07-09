@@ -9,6 +9,15 @@ export const projects = [
     live: false,
   },
   {
+    title: "Video Captioning",
+    description: "A video captioning pipeline that extracts frames, transcribes audio, and generates captions in 4 distinct tones — formal, sarcastic, humorous-tech, and humorous-non-tech — using Minimax M3 via Fireworks AI, with a built-in LLM self-judge and Streamlit demo UI.",
+    imageUrl: "/projects/video-captioning.png",
+    techStack: ["Python", "OpenCV", "OpenAI Whisper", "Fireworks AI", "Minimax M3", "Streamlit", "Docker", "FFmpeg", "PyTorch"],
+    liveUrl: "#",
+    githubUrl: "https://github.com/HarshitBilagi/Video-Captioning",
+    live: false,
+  },
+  {
     title: "FinMate",
     description: "FinMate is a comprehensive personal finance management application built with Flutter and FastAPI, designed to help users track, analyze, and manage their finances effortlessly.",
     imageUrl: "/projects/finmate.png",

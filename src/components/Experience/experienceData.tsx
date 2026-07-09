@@ -28,7 +28,7 @@ export const experienceData: Experience[] = [
         role: "Fulltime - Programmer Analyst Trainee",
         company: "Cognizant Technology Solutions",
         duration: "Jul. 2025 - Present",
-        description: "Developed and optimized the core backend data layers of an enterprise business application, writing complex database scripts to manage transactional logic. Engineered dynamic, data-driven interfaces and custom reporting modules, directly improving data accessibility and operational efficiency for internal teams. Implemented structured query optimizations and refactored existing relational database structures to reduce query execution latency",
+        description: "Developed and optimized the core backend data layers of an enterprise business application, writing complex database scripts to manage transactional logic. Engineered dynamic, data-driven interfaces and custom reporting modules, directly improving data accessibility and operational efficiency for internal teams. Implemented structured query optimizations and refactored existing relational database structures to reduce query execution latency.",
         logo: "/logos/cognizant-logo-white.webp",
         technologies: ["Backend Engineering", "Relational Databases (SQL)", "PL/SQL Architecture", "Query Optimization", "Data Pipelines", "UI Component Design"]
     },

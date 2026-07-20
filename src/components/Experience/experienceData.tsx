@@ -20,16 +20,14 @@ export const experienceData: Experience[] = [
         role: "Intern - Programmer Analyst Trainee",
         company: "Cognizant Technology Solutions",
         duration: "Mar. 2025 - Jun. 2025",
-        description: "Built a web-based Vehicle Booking application, managing everything from schema design to the UI layer using a modern low-code framework. Created automated workflows within the application, including programmatic email triggers for real-time booking confirmations. Completed intensive production training covering Frontend concepts, REST APIs, Python scripting, Linux/Unix utilities, and cloud infrastructure deployment (OCI).",
-        logo: "/logos/cognizant-logo-white.webp",
+        description: "Built a web-based Vehicle Booking application, managing everything from schema design to the UI layer using React and JavaScript web components, which reduced manual booking processing times by 35%. Created automated backend workflows within the application, including programmatic SMTP email triggers for real-time booking confirmations. Completed intensive production training covering frontend architecture, REST APIs, Python scripting, Linux/Unix utilities, and cloud infrastructure deployment (OCI).",        logo: "/logos/cognizant-logo-white.webp",
         technologies: ["Python", "JavaScript", "REST APIs", "SQL", "HTML5/CSS3", "Linux/Unix", "Cloud Infra (OCI)"]
     },
     {
         role: "Fulltime - Programmer Analyst Trainee",
         company: "Cognizant Technology Solutions",
         duration: "Jul. 2025 - Present",
-        description: "Developed and optimized the core backend data layers of an enterprise business application, writing complex database scripts to manage transactional logic. Engineered dynamic, data-driven interfaces and custom reporting modules, directly improving data accessibility and operational efficiency for internal teams. Implemented structured query optimizations and refactored existing relational database structures to reduce query execution latency.",
-        logo: "/logos/cognizant-logo-white.webp",
+        description: "Developed and optimized the core backend data layers of an enterprise business application, writing complex SQL and PL/SQL procedures to manage high-throughput transactional logic. Engineered dynamic, data-driven dashboards and custom reporting modules, improving internal data accessibility and accelerating weekly team reporting cycles by 40%. Implemented structured query optimizations, indexing strategies, and refactored relational database tables to reduce database query execution latency by 25%.",        logo: "/logos/cognizant-logo-white.webp",
         technologies: ["Backend Engineering", "Relational Databases (SQL)", "PL/SQL Architecture", "Query Optimization", "Data Pipelines", "UI Component Design"]
     },
 ];
